@@ -353,15 +353,11 @@
             </div>
             <div class="cr-footer">
               <div class="cr-actions">
-                <a href="tel:1934088400" class="btn-cr-action btn-cr-action--phone">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                  Ligar
-                </a>
                 <a href="https://maps.app.goo.gl/u9BRTrVCJtsNUCgB8" target="_blank" rel="noopener" class="btn-cr-action btn-cr-action--map">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                   Ver no Mapa
                 </a>
-                <a href="https://psprotecao.com.br" target="_blank" rel="noopener" class="btn-cr-action btn-cr-action--website">
+                <a href="https://protecaoevigilancia.com.br" target="_blank" rel="noopener" class="btn-cr-action btn-cr-action--website">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
                   Acessar Site
                 </a>
@@ -401,28 +397,6 @@
                <span class="cr-logo-fallback" style="display:none;background:${color}">${initials}</span>`
             : `<span class="cr-logo-fallback" style="background:${color}">${initials}</span>`;
 
-          // Botões de ação dinâmicos
-          const phoneButton = company.phone
-            ? `<a href="tel:${company.phone.replace(/\D/g,'')}" class="btn-cr-action btn-cr-action--phone">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                Ligar
-               </a>`
-            : '';
-
-          const mapsButton = company.url
-            ? `<a href="${company.url}" target="_blank" rel="noopener" class="btn-cr-action btn-cr-action--map">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                Ver no Mapa
-               </a>`
-            : '';
-
-          const websiteButton = company.website
-            ? `<a href="${company.website}" target="_blank" rel="noopener" class="btn-cr-action btn-cr-action--website">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                Acessar Site
-               </a>`
-            : '';
-
           htmlParts.push(`
             <div class="company-result">
               <div class="cr-body">
@@ -450,9 +424,10 @@
               </div>
               <div class="cr-footer">
                 <div class="cr-actions">
-                  ${phoneButton}
-                  ${mapsButton}
-                  ${websiteButton}
+                  <span class="cr-not-filled">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    Dados não preenchidos pela empresa
+                  </span>
                 </div>
                 <div class="cr-sent-badge">
                   <svg class="cr-icon-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
@@ -501,7 +476,10 @@
               </div>
               <div class="cr-footer">
                 <div class="cr-actions">
-                  <!-- Sem botões por ser genérico/excedente -->
+                  <span class="cr-not-filled">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    Dados não preenchidos pela empresa
+                  </span>
                 </div>
                 <div class="cr-sent-badge">
                   <svg class="cr-icon-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
