@@ -23,6 +23,7 @@
     createParticles();
     initNavbar();
     initHeroAnimation();
+    initSubtitleRotation();
     initScrollReveals();
     initStepRings();
     initServiceCards();
@@ -177,6 +178,43 @@
         delay: 1.5
       });
     }
+  }
+
+  /* ── Subtitle Rotation ───────────────────────────────────── */
+  function initSubtitleRotation() {
+    const el = document.getElementById('hero-subtitle-rotating');
+    if (!el) return;
+
+    const alternatives = [
+      "Sem Ligações. Sem Burocracia.",
+      "Economize tempo. Sem burocracia.",
+      "Cotações rápidas. 100% grátis.",
+      "Compare propostas. Economize hoje.",
+      "Empresas avaliadas. Propostas em 24h.",
+      "Simples, rápido e 100% gratuito.",
+      "Sem chateação. Receba propostas grátis.",
+      "Poupe tempo e reduza custos.",
+      "As melhores empresas competem pelo seu contrato.",
+      "Solicite online. Resposta em 24 horas."
+    ];
+
+    let currentIndex = 0;
+
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % alternatives.length;
+      gsap.to(el, {
+        opacity: 0,
+        y: -10,
+        duration: 0.4,
+        onComplete: () => {
+          el.textContent = alternatives[currentIndex];
+          gsap.fromTo(el,
+            { opacity: 0, y: 10 },
+            { opacity: 1, y: 0, duration: 0.4 }
+          );
+        }
+      });
+    }, 4000);
   }
 
   /* ── Scroll Reveals ─────────────────────────────────────── */

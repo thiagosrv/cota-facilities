@@ -34,6 +34,27 @@
     bindContactForm();
     bindNavButtons();
     bindNewQuote();
+    
+    // SEO Programático: Pre-selecionar cidade se informada
+    if (window.PRESELECTED_CITY) {
+      const citySelect = document.getElementById('citySelect');
+      if (citySelect) {
+        citySelect.value = window.PRESELECTED_CITY;
+        state.data.city = window.PRESELECTED_CITY;
+        const nextBtn = document.getElementById('next-2');
+        if (nextBtn) nextBtn.disabled = false;
+      }
+    }
+    
+    // SEO Programático: Pre-selecionar serviço se informado
+    if (window.PRESELECTED_SERVICE) {
+      state.data.service = window.PRESELECTED_SERVICE;
+      const nextBtn0 = document.getElementById('next-0');
+      if (nextBtn0) nextBtn0.disabled = false;
+      const card = document.querySelector(`.service-select-card[data-value="${window.PRESELECTED_SERVICE}"]`);
+      if (card) card.classList.add('selected');
+    }
+    
     updateProgress(0);
   });
 
