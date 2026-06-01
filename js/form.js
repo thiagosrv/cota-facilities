@@ -326,27 +326,50 @@
         /* ── PS Proteção — SEMPRE PRIMEIRO E EM DESTAQUE ── */
         htmlParts.push(`
           <div class="company-result company-result--featured">
-            <div class="cr-featured-tag">⭐ Melhor opção regional</div>
+            <div class="cr-featured-tag"><span class="cr-star-icon">⭐</span> Melhor opção regional</div>
             <div class="cr-body">
-              <div class="cr-avatar" style="background:linear-gradient(135deg,#1B3A8C,#7B2FBE)">
-                <span>PS</span>
-              </div>
-              <div class="cr-info">
-                <span class="cr-name">PS Proteção</span>
-                <span class="cr-rating">★★★★★ <strong>4.8</strong> · Serviços</span>
-                <span class="cr-services">Portaria · Segurança · Facilities · Controle de Acesso</span>
-              </div>
-              <div class="cr-meta">
-                <span class="cr-status open">● Aberto agora</span>
-                <a href="https://maps.app.goo.gl/u9BRTrVCJtsNUCgB8" target="_blank" rel="noopener" class="cr-maps-link">
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1C3.79 1 2 2.79 2 5C2 7.5 6 11 6 11C6 11 10 7.5 10 5C10 2.79 8.21 1 6 1Z" stroke="currentColor" stroke-width="1.2"/><circle cx="6" cy="5" r="1.5" fill="currentColor"/></svg>
-                  Ver no Google Maps
-                </a>
+              <div class="cr-main-content">
+                <div class="cr-avatar-wrap">
+                  <span class="cr-logo-fallback" style="background:linear-gradient(135deg,#1B3A8C,#7B2FBE)">PS</span>
+                </div>
+                <div class="cr-info">
+                  <div class="cr-title-row">
+                    <span class="cr-name">PS Proteção</span>
+                    <span class="cr-badge-premium">Parceiro Verificado</span>
+                  </div>
+                  <div class="cr-rating-row">
+                    <div class="cr-stars-visual">★★★★★</div>
+                    <span class="cr-rating-number">4.8</span>
+                  </div>
+                  <div class="cr-address-row">
+                    <svg class="cr-icon-location" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span class="cr-address-text">Americana · São Paulo · Campinas (Matriz)</span>
+                  </div>
+                </div>
+                <div class="cr-meta">
+                  <span class="cr-status open"><span class="cr-pulse-dot"></span> Aberto agora</span>
+                </div>
               </div>
             </div>
-            <div class="cr-sent">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7L5.5 10.5L12 4" stroke="#84CC16" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Cotação enviada
+            <div class="cr-footer">
+              <div class="cr-actions">
+                <a href="tel:1934088400" class="btn-cr-action btn-cr-action--phone">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  Ligar
+                </a>
+                <a href="https://maps.app.goo.gl/u9BRTrVCJtsNUCgB8" target="_blank" rel="noopener" class="btn-cr-action btn-cr-action--map">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Ver no Mapa
+                </a>
+                <a href="https://psprotecao.com.br" target="_blank" rel="noopener" class="btn-cr-action btn-cr-action--website">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                  Acessar Site
+                </a>
+              </div>
+              <div class="cr-sent-badge">
+                <svg class="cr-icon-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Cotação Enviada</span>
+              </div>
             </div>
           </div>
         `);
@@ -378,49 +401,63 @@
                <span class="cr-logo-fallback" style="display:none;background:${color}">${initials}</span>`
             : `<span class="cr-logo-fallback" style="background:${color}">${initials}</span>`;
 
-          // Links de ação
-          const phoneLink = company.phone
-            ? `<a href="tel:${company.phone.replace(/\D/g,'')}" class="cr-action-link cr-action-phone">
-                <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M11.5 9.5C11.5 9.5 10.5 10.5 10.25 10.75C9.5 11.5 7 10.5 5 8.5C3 6.5 2 4 2.75 3.25C3 3 4 2 4 2L6 5L5 6C5 6 5.5 7 6.5 8C7.5 9 8.5 9.5 8.5 9.5L9.5 8.5L11.5 9.5Z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                ${company.phone}
+          // Botões de ação dinâmicos
+          const phoneButton = company.phone
+            ? `<a href="tel:${company.phone.replace(/\D/g,'')}" class="btn-cr-action btn-cr-action--phone">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                Ligar
                </a>`
             : '';
 
-          const websiteLink = company.website
-            ? `<a href="${company.website}" target="_blank" rel="noopener" class="cr-action-link cr-action-web">
-                <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M6.5 1.5C6.5 1.5 4.5 4 4.5 6.5C4.5 9 6.5 11.5 6.5 11.5M6.5 1.5C6.5 1.5 8.5 4 8.5 6.5C8.5 9 6.5 11.5 6.5 11.5M1.5 6.5H11.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-                ${domain}
+          const mapsButton = company.url
+            ? `<a href="${company.url}" target="_blank" rel="noopener" class="btn-cr-action btn-cr-action--map">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Ver no Mapa
                </a>`
             : '';
 
-          const mapsLink = company.url
-            ? `<a href="${company.url}" target="_blank" rel="noopener" class="cr-action-link cr-action-maps">
-                <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5C4.29 1.5 2.5 3.29 2.5 5.5C2.5 8 6.5 12 6.5 12C6.5 12 10.5 8 10.5 5.5C10.5 3.29 8.71 1.5 6.5 1.5Z" stroke="currentColor" stroke-width="1.2"/><circle cx="6.5" cy="5.5" r="1.5" fill="currentColor"/></svg>
-                Google Maps
+          const websiteButton = company.website
+            ? `<a href="${company.website}" target="_blank" rel="noopener" class="btn-cr-action btn-cr-action--website">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                Acessar Site
                </a>`
             : '';
 
           htmlParts.push(`
             <div class="company-result">
               <div class="cr-body">
-                <div class="cr-avatar-wrap">
-                  ${logoHtml}
-                </div>
-                <div class="cr-info">
-                  <span class="cr-name">${company.name}</span>
-                  <span class="cr-rating">${stars} <strong>${(company.rating || 4).toFixed(1)}</strong></span>
-                  <span class="cr-services">${company.address || selectedCity + ', SP'}</span>
-                  <div class="cr-actions">
-                    ${phoneLink}${websiteLink}${mapsLink}
+                <div class="cr-main-content">
+                  <div class="cr-avatar-wrap">
+                    ${logoHtml}
+                  </div>
+                  <div class="cr-info">
+                    <div class="cr-title-row">
+                      <span class="cr-name">${company.name}</span>
+                    </div>
+                    <div class="cr-rating-row">
+                      <div class="cr-stars-visual">${stars}</div>
+                      <span class="cr-rating-number">${(company.rating || 4).toFixed(1)}</span>
+                    </div>
+                    <div class="cr-address-row">
+                      <svg class="cr-icon-location" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                      <span class="cr-address-text">${company.address || selectedCity + ', SP'}</span>
+                    </div>
+                  </div>
+                  <div class="cr-meta">
+                    <span class="cr-status open"><span class="cr-pulse-dot"></span> Disponível</span>
                   </div>
                 </div>
-                <div class="cr-meta">
-                  <span class="cr-status open">● Disponível</span>
-                </div>
               </div>
-              <div class="cr-sent">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7L5.5 10.5L12 4" stroke="#84CC16" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                Cotação enviada
+              <div class="cr-footer">
+                <div class="cr-actions">
+                  ${phoneButton}
+                  ${mapsButton}
+                  ${websiteButton}
+                </div>
+                <div class="cr-sent-badge">
+                  <svg class="cr-icon-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Cotação Enviada</span>
+                </div>
               </div>
             </div>
           `);
@@ -440,26 +477,40 @@
           htmlParts.push(`
             <div class="company-result">
               <div class="cr-body">
-                <div class="cr-avatar" style="background:${g.color}">
-                  <span>${g.initials}</span>
-                </div>
-                <div class="cr-info">
-                  <span class="cr-name">${g.name}</span>
-                  <span class="cr-rating">★★★★☆ <strong>4.3</strong></span>
-                  <span class="cr-services">${selectedCity}, SP</span>
-                </div>
-                <div class="cr-meta">
-                  <span class="cr-status open">● Aberto agora</span>
+                <div class="cr-main-content">
+                  <div class="cr-avatar-wrap">
+                    <span class="cr-logo-fallback" style="background:${g.color}">${g.initials}</span>
+                  </div>
+                  <div class="cr-info">
+                    <div class="cr-title-row">
+                      <span class="cr-name">${g.name}</span>
+                    </div>
+                    <div class="cr-rating-row">
+                      <div class="cr-stars-visual">★★★★☆</div>
+                      <span class="cr-rating-number">4.3</span>
+                    </div>
+                    <div class="cr-address-row">
+                      <svg class="cr-icon-location" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                      <span class="cr-address-text">${selectedCity}, SP</span>
+                    </div>
+                  </div>
+                  <div class="cr-meta">
+                    <span class="cr-status open"><span class="cr-pulse-dot"></span> Aberto agora</span>
+                  </div>
                 </div>
               </div>
-              <div class="cr-sent">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7L5.5 10.5L12 4" stroke="#84CC16" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                Cotação enviada
+              <div class="cr-footer">
+                <div class="cr-actions">
+                  <!-- Sem botões por ser genérico/excedente -->
+                </div>
+                <div class="cr-sent-badge">
+                  <svg class="cr-icon-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Cotação Enviada</span>
+                </div>
               </div>
             </div>
           `);
         }
-
         container.innerHTML = htmlParts.join('');
       })
       .catch(err => {
