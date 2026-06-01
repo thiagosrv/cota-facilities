@@ -2544,14 +2544,46 @@
   padding: var(--space-4);
 }
 
-.cr-avatar {
-  width: 44px;
-  height: 44px;
+/* Avatar wrap — contém logo img ou fallback inicial */
+.cr-avatar-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.cr-logo-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  background: #1E293B;
+  padding: 6px;
+}
+
+.cr-logo-fallback {
+  width: 48px;
+  height: 48px;
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+/* Manter compatibilidade com cards estáticos (PS Proteção) */
+.cr-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
   font-weight: 700;
   color: var(--color-white);
   flex-shrink: 0;
@@ -2586,6 +2618,52 @@
   text-overflow: ellipsis;
 }
 
+/* Links de ação: telefone, site, maps */
+.cr-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.cr-action-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 3px 8px;
+  border-radius: 20px;
+  transition: background var(--duration-fast), color var(--duration-fast);
+}
+
+.cr-action-phone {
+  color: #34D399;
+  background: rgba(52, 211, 153, 0.10);
+  border: 1px solid rgba(52, 211, 153, 0.25);
+}
+.cr-action-phone:hover { background: rgba(52, 211, 153, 0.20); }
+
+.cr-action-web {
+  color: #60A5FA;
+  background: rgba(96, 165, 250, 0.10);
+  border: 1px solid rgba(96, 165, 250, 0.25);
+  max-width: 130px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.cr-action-web:hover { background: rgba(96, 165, 250, 0.20); }
+
+.cr-action-maps {
+  color: #A78BFA;
+  background: rgba(167, 139, 250, 0.10);
+  border: 1px solid rgba(167, 139, 250, 0.25);
+}
+.cr-action-maps:hover { background: rgba(167, 139, 250, 0.20); }
+
 .cr-meta {
   display: flex;
   flex-direction: column;
@@ -2600,6 +2678,7 @@
   color: #34D399;
 }
 
+/* Manter compatibilidade com link maps inline antigo */
 .cr-maps-link {
   display: flex;
   align-items: center;

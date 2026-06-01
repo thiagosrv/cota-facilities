@@ -46,6 +46,10 @@ def converter_xlsx_para_json(caminho_xlsx):
                 col_map["rating"] = idx
             elif "endereço" in cab_lower or "endereco" in cab_lower or "address" in cab_lower:
                 col_map["address"] = idx
+            elif "telefone" in cab_lower or "phone" in cab_lower or "fone" in cab_lower or "tel" in cab_lower:
+                col_map["phone"] = idx
+            elif "site" in cab_lower or "website" in cab_lower or "web" in cab_lower:
+                col_map["website"] = idx
             elif "link" in cab_lower or "maps" in cab_lower or "url" in cab_lower:
                 col_map["url"] = idx
 
@@ -83,9 +87,21 @@ def converter_xlsx_para_json(caminho_xlsx):
                 address = linha[col_map["address"]].value
                 registro["address"] = str(address).strip() if address else ""
 
+            if "phone" in col_map:
+                phone = linha[col_map["phone"]].value
+                registro["phone"] = str(phone).strip() if phone else ""
+
+            if "website" in col_map:
+                website = linha[col_map["website"]].value
+                val = str(website).strip() if website else ""
+                # Garantir que começa com https://
+                if val and not val.startswith("http"):
+                    val = "https://" + val
+                registro["website"] = val
+
             if "url" in col_map:
                 url = linha[col_map["url"]].value
-                # Se for "Ver no Maps", substituir por URL vazio
+                # Se for "Ver no Maps" (texto sem link), substituir por vazio
                 if url and "Ver no Maps" in str(url):
                     registro["url"] = ""
                 else:

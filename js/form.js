@@ -364,27 +364,57 @@
           const stars = '★'.repeat(Math.min(Math.floor(company.rating || 4), 5)) +
                         '☆'.repeat(Math.max(5 - Math.floor(company.rating || 4), 0));
 
+          // Logo via favicon do site (se tiver website)
+          const domain = company.website
+            ? company.website.replace(/^https?:\/\//, '').replace(/\/.*$/, '')
+            : '';
+          const logoHtml = domain
+            ? `<img
+                class="cr-logo-img"
+                src="https://www.google.com/s2/favicons?domain=${domain}&sz=64"
+                alt="${company.name}"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+               <span class="cr-logo-fallback" style="display:none;background:${color}">${initials}</span>`
+            : `<span class="cr-logo-fallback" style="background:${color}">${initials}</span>`;
+
+          // Links de ação
+          const phoneLink = company.phone
+            ? `<a href="tel:${company.phone.replace(/\D/g,'')}" class="cr-action-link cr-action-phone">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M11.5 9.5C11.5 9.5 10.5 10.5 10.25 10.75C9.5 11.5 7 10.5 5 8.5C3 6.5 2 4 2.75 3.25C3 3 4 2 4 2L6 5L5 6C5 6 5.5 7 6.5 8C7.5 9 8.5 9.5 8.5 9.5L9.5 8.5L11.5 9.5Z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                ${company.phone}
+               </a>`
+            : '';
+
+          const websiteLink = company.website
+            ? `<a href="${company.website}" target="_blank" rel="noopener" class="cr-action-link cr-action-web">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="6.5" cy="6.5" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M6.5 1.5C6.5 1.5 4.5 4 4.5 6.5C4.5 9 6.5 11.5 6.5 11.5M6.5 1.5C6.5 1.5 8.5 4 8.5 6.5C8.5 9 6.5 11.5 6.5 11.5M1.5 6.5H11.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+                ${domain}
+               </a>`
+            : '';
+
           const mapsLink = company.url
-            ? `<a href="${company.url}" target="_blank" rel="noopener" class="cr-maps-link">
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1C3.79 1 2 2.79 2 5C2 7.5 6 11 6 11C6 11 10 7.5 10 5C10 2.79 8.21 1 6 1Z" stroke="currentColor" stroke-width="1.2"/><circle cx="6" cy="5" r="1.5" fill="currentColor"/></svg>
-                Ver no Google Maps
+            ? `<a href="${company.url}" target="_blank" rel="noopener" class="cr-action-link cr-action-maps">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5C4.29 1.5 2.5 3.29 2.5 5.5C2.5 8 6.5 12 6.5 12C6.5 12 10.5 8 10.5 5.5C10.5 3.29 8.71 1.5 6.5 1.5Z" stroke="currentColor" stroke-width="1.2"/><circle cx="6.5" cy="5.5" r="1.5" fill="currentColor"/></svg>
+                Google Maps
                </a>`
             : '';
 
           htmlParts.push(`
             <div class="company-result">
               <div class="cr-body">
-                <div class="cr-avatar" style="background:${color}">
-                  <span>${initials}</span>
+                <div class="cr-avatar-wrap">
+                  ${logoHtml}
                 </div>
                 <div class="cr-info">
                   <span class="cr-name">${company.name}</span>
                   <span class="cr-rating">${stars} <strong>${(company.rating || 4).toFixed(1)}</strong></span>
                   <span class="cr-services">${company.address || selectedCity + ', SP'}</span>
+                  <div class="cr-actions">
+                    ${phoneLink}${websiteLink}${mapsLink}
+                  </div>
                 </div>
                 <div class="cr-meta">
-                  <span class="cr-status open">● Aberto agora</span>
-                  ${mapsLink}
+                  <span class="cr-status open">● Disponível</span>
                 </div>
               </div>
               <div class="cr-sent">
