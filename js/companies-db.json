@@ -1,0 +1,947 @@
+{
+  "Empresas de Segurança": {
+    "Guarulhos": [
+      {
+        "city": "Guarulhos",
+        "name": "Grupo Red Brasil",
+        "rating": 3.7,
+        "address": "R. Júlio Fernandes, 181 - Jardim Imperador, Guarulhos - SP, 07072-103",
+        "url": ""
+      },
+      {
+        "city": "Guarulhos",
+        "name": "GRUPO H SERVICE",
+        "rating": 4.4,
+        "address": "Av. Dr. Timóteo Penteado, 1860 - Vila Hulda, Guarulhos - SP, 07094-100",
+        "url": ""
+      },
+      {
+        "city": "Guarulhos",
+        "name": "Grupol Serviços e Facilities",
+        "rating": 4.4,
+        "address": "Av. Tiradentes, 636 - Jardim Santa Edwirges, Guarulhos - SP, 07090-000",
+        "url": ""
+      }
+    ],
+    "São Paulo": [
+      {
+        "city": "São Paulo",
+        "name": "Grupo Megavig (Matriz) - Segurança Privada e Facilities",
+        "rating": 4.4,
+        "address": "Av. Piassanguaba, 2909 - Planalto Paulista, São Paulo - SP, 04060-004",
+        "url": ""
+      },
+      {
+        "city": "São Paulo",
+        "name": "Security Segurança e Serviços",
+        "rating": 4.6,
+        "address": "Rua Apinajés, 1069 - Pompeia, São Paulo - SP, 05017-000",
+        "url": ""
+      },
+      {
+        "city": "São Paulo",
+        "name": "GSS SEGURANÇA",
+        "rating": 4.3,
+        "address": "R. Aureliano Guimarães, 56 - Vila Andrade, São Paulo - SP, 05727-160",
+        "url": ""
+      }
+    ],
+    "São Bernardo do Campo": [
+      {
+        "city": "São Bernardo do Campo",
+        "name": "Grupo Harmonia Segurança e Serviços",
+        "rating": 4.8,
+        "address": "Rua Nicola Spinelli, 321 - Nova Petrópolis, São Bernardo do Campo - SP, 09770-200",
+        "url": ""
+      },
+      {
+        "city": "São Bernardo do Campo",
+        "name": "Grupo Starseg",
+        "rating": 4.3,
+        "address": "R. Tasman, 448 - Jardim do Mar, São Bernardo do Campo - SP, 09750-360",
+        "url": ""
+      },
+      {
+        "city": "São Bernardo do Campo",
+        "name": "Grupo Vila Rica Serviços de Portaria Ltda",
+        "rating": 4.5,
+        "address": "R. Nossa Sra. de Lourdes, 236 - Alves Dias, São Bernardo do Campo - SP, 09851-375",
+        "url": ""
+      }
+    ],
+    "Santo André": [
+      {
+        "city": "Santo André",
+        "name": "Port Empresarial Faciliteis e Terceirizações",
+        "rating": 4.5,
+        "address": "R. Florianópolis, 171 - Vila Santa Teresa, Santo André - SP, 09030-620",
+        "url": ""
+      },
+      {
+        "city": "Santo André",
+        "name": "Desppol Segurança Eletrônica",
+        "rating": 4.8,
+        "address": "R Oratório, 465 - Bangú, Santo André - SP, 09280-550",
+        "url": ""
+      },
+      {
+        "city": "Santo André",
+        "name": "Grupo Sepa Serviços",
+        "rating": 4.2,
+        "address": "R. Baturité, 316 - Vila Curuçá, Santo André - SP, 09291-170",
+        "url": ""
+      }
+    ],
+    "Osasco": [
+      {
+        "city": "Osasco",
+        "name": "Valmac Vigilância Patrimonial Ltda.",
+        "rating": 4.6,
+        "address": "R. dos Marianos, 234 - Centro, Osasco - SP, 06016-050",
+        "url": ""
+      },
+      {
+        "city": "Osasco",
+        "name": "FORTSVIG SEGURANÇA PRIVADA LTDA.",
+        "rating": 5.0,
+        "address": "R. Machado de Assis, 470 - Centro, Osasco - SP, 06018-020",
+        "url": ""
+      },
+      {
+        "city": "Osasco",
+        "name": "Grupo Mac Segur Segurança Privada LTDA.",
+        "rating": 4.9,
+        "address": "R. Atílio Delanina, 297 - Vila Campesina, Osasco - SP, 06023-070",
+        "url": ""
+      }
+    ],
+    "Sorocaba": [
+      {
+        "city": "Sorocaba",
+        "name": "PROWF Segurança Privada",
+        "rating": 4.3,
+        "address": "R. Profa. Ossis Salvestrini Mendes, 587 - Jardim Santa Rosália, Sorocaba - SP, 18095-390",
+        "url": ""
+      },
+      {
+        "city": "Sorocaba",
+        "name": "Grupo Única",
+        "rating": 4.5,
+        "address": "Av. Américo de Carvalho, 920 - Jardim Europa, Sorocaba - SP, 18045-000",
+        "url": ""
+      },
+      {
+        "city": "Sorocaba",
+        "name": "Grupo JM Segurança Eletronica e Patrimonial",
+        "rating": 4.9,
+        "address": "R. Maria Cinto de Biagi, 223 - Jardim Santa Rosália, Sorocaba - SP, 18095-410",
+        "url": ""
+      }
+    ],
+    "Ribeirão Preto": [
+      {
+        "city": "Ribeirão Preto",
+        "name": "Grupo Impacto - Filial - Ribeirão Preto",
+        "rating": 4.8,
+        "address": "R. Marcelo Sarti, 100 - Sala 202 - Res. Florida, Ribeirão Preto - SP, 14026-290",
+        "url": ""
+      },
+      {
+        "city": "Ribeirão Preto",
+        "name": "Riber Águias Vigilância e Segurança Privada",
+        "rating": 4.8,
+        "address": "R. Mantiqueira, 815 - Alto da Boa Vista, Ribeirão Preto - SP, 14025-600",
+        "url": ""
+      },
+      {
+        "city": "Ribeirão Preto",
+        "name": "Carseg | Segurança Patrimonial em Ribeirão Preto",
+        "rating": 4.6,
+        "address": "R. Orlando Bartocci, 228 - Ribeirão Preto - SP, 14065-610",
+        "url": ""
+      }
+    ],
+    "São José dos Campos": [
+      {
+        "city": "São José dos Campos",
+        "name": "Grupo Zanetti - Segurança e Facilities",
+        "rating": 4.6,
+        "address": "Av. Dr. João Baptista Soares de Queiroz Júnior, 2571 - Jd. das Industrias, SJC - SP, 12240-120",
+        "url": ""
+      },
+      {
+        "city": "São José dos Campos",
+        "name": "Grupo Coneleste Vigilância e Serviços",
+        "rating": 4.6,
+        "address": "Av. Dr. João Baptista Soares de Queiroz Júnior, 1250 - SJC - SP, 12240-000",
+        "url": ""
+      },
+      {
+        "city": "São José dos Campos",
+        "name": "Panther Segurança - Sede São José dos Campos",
+        "rating": 4.8,
+        "address": "Av. Comendador Vicente de Paulo Penido, 304 - Jardim Aquarius, SJC - SP, 12246-856",
+        "url": ""
+      }
+    ],
+    "Santos": [
+      {
+        "city": "Santos",
+        "name": "Soldier Segurança",
+        "rating": 4.2,
+        "address": "R. João Guerra, 194 - Macuco, Santos - SP, 11015-130",
+        "url": ""
+      },
+      {
+        "city": "Santos",
+        "name": "SEGS Segurança Eletrônica e Portaria Remota Virtual",
+        "rating": 4.9,
+        "address": "R. Quinze de Novembro, 65 - 10º Andar - Centro, Santos - SP, 11010-910",
+        "url": ""
+      },
+      {
+        "city": "Santos",
+        "name": "Comando Segurança Especial",
+        "rating": 4.7,
+        "address": "R. Paraguaçu, 23 - Boqueirão, Santos - SP, 11050-020",
+        "url": ""
+      }
+    ],
+    "Americana": [
+      {
+        "city": "Americana",
+        "name": "PS Proteção - Portaria e Segurança",
+        "rating": 4.8,
+        "address": "R. São Gabriel, 1623 - Vila Belvedere, Americana - SP, 13473-000",
+        "url": ""
+      },
+      {
+        "city": "Americana",
+        "name": "SOS Segurança - Monitoramento 24h",
+        "rating": 4.5,
+        "address": "R. Dom Pedro II, 878 - Vila Galo, Americana - SP, 13466-000",
+        "url": ""
+      },
+      {
+        "city": "Americana",
+        "name": "GRUPO PORT-ON SEGURANÇA",
+        "rating": 4.5,
+        "address": "R. Francisco Lapierre, 561 - Vila Sao Pedro, Americana - SP, 13466-510",
+        "url": ""
+      }
+    ],
+    "Diadema": [
+      {
+        "city": "Diadema",
+        "name": "Tap Serviços de Vigilância Controle de Portaria",
+        "rating": 5.0,
+        "address": "R. Guaicurus, 444 - Conceição, Diadema - SP, 09911-630",
+        "url": ""
+      },
+      {
+        "city": "Diadema",
+        "name": "Renowa Segurança & Serviços",
+        "rating": 4.3,
+        "address": "R. Orense, 712 - Centro, Diadema - SP, 09920-650",
+        "url": ""
+      },
+      {
+        "city": "Diadema",
+        "name": "Munizes Segurança",
+        "rating": 5.0,
+        "address": "R. Orense, 41 - 14° Andar - Centro, Diadema - SP, 09920-650",
+        "url": ""
+      }
+    ],
+    "Mauá": [
+      {
+        "city": "Mauá",
+        "name": "Seal Segurança e Serviços",
+        "rating": 4.3,
+        "address": "Av. Cap. João, 1480 - Matriz, Mauá - SP, 09360-020",
+        "url": ""
+      },
+      {
+        "city": "Mauá",
+        "name": "Vio Segurança e Tecnologia",
+        "rating": 5.0,
+        "address": "R. Brás Cubas, 92 - Vila Bocaina, Mauá - SP, 09310-730",
+        "url": ""
+      },
+      {
+        "city": "Mauá",
+        "name": "SP Forte Segurança e Serviços",
+        "rating": 4.6,
+        "address": "Av. Dr. Getúlio Vargas, 172 - Vila Guarani, Mauá - SP, 09310-180",
+        "url": ""
+      }
+    ],
+    "Carapicuíba": [
+      {
+        "city": "Carapicuíba",
+        "name": "Morada Seg Segurança Eletronica",
+        "rating": 5.0,
+        "address": "Av. Eugênia, 221 - Centro, Carapicuíba - SP, 06322-010",
+        "url": ""
+      },
+      {
+        "city": "Carapicuíba",
+        "name": "GRUPO SALES",
+        "rating": 4.6,
+        "address": "R. Marcílio Martins, 74 - Vila Martins, Carapicuíba - SP, 06315-120",
+        "url": ""
+      },
+      {
+        "city": "Carapicuíba",
+        "name": "Instalação Câmeras Carapicuíba",
+        "rating": 4.9,
+        "address": "Av. Clara Rosa - Vila Silviania, Carapicuíba - SP, 06381-480",
+        "url": ""
+      }
+    ],
+    "Itaquaquecetuba": [
+      {
+        "city": "Itaquaquecetuba",
+        "name": "PLANETSEGG - SEGURANÇA, MONITORAMENTO E VIGILÂNCIA",
+        "rating": 5.0,
+        "address": "Rod. Alberto Hinoto, 3883 - Vila Sao Carlos, Itaquaquecetuba - SP, 08599-515",
+        "url": ""
+      },
+      {
+        "city": "Itaquaquecetuba",
+        "name": "CERVI SEGURANÇA ELETRÔNICA LTDA",
+        "rating": 5.0,
+        "address": "Av. João Barbosa de Moraes, 220 - Vila Zeferina, Itaquaquecetuba - SP, 08576-070",
+        "url": ""
+      },
+      {
+        "city": "Itaquaquecetuba",
+        "name": "Segurança Patrimonial - Monitoramento 24hs",
+        "rating": 4.0,
+        "address": "Av. João Barbosa de Moraes, 448 - Vila Zeferina, Itaquaquecetuba - SP, 08576-070",
+        "url": ""
+      }
+    ],
+    "Jundiaí": [
+      {
+        "city": "Jundiaí",
+        "name": "Delphos",
+        "rating": 4.3,
+        "address": "R. Jair Peres, 479 - Vila Nova Jundiainopolis, Jundiaí - SP, 13210-730",
+        "url": ""
+      },
+      {
+        "city": "Jundiaí",
+        "name": "Grupo Ethics",
+        "rating": 4.2,
+        "address": "R. Nicola Rivelli, 122 - Vila Bela I, Jundiaí - SP, 13209-620",
+        "url": ""
+      },
+      {
+        "city": "Jundiaí",
+        "name": "Grupo Carrantos Segurança e Facilities",
+        "rating": 4.1,
+        "address": "Av. Guilherme de Almeida, 19 - Vila Liberdade, Jundiaí - SP, 13215-170",
+        "url": ""
+      }
+    ],
+    "Piracicaba": [
+      {
+        "city": "Piracicaba",
+        "name": "PiraSeg Tecnologia e Segurança",
+        "rating": 4.5,
+        "address": "R. Aquilino Pacheco, 390 - Alto, Piracicaba - SP, 13419-150",
+        "url": ""
+      },
+      {
+        "city": "Piracicaba",
+        "name": "Grupo JJ Journey Job Piracicaba",
+        "rating": 5.0,
+        "address": "R. Treze de Maio, 1559 - Alto, Piracicaba - SP, 13419-270",
+        "url": ""
+      },
+      {
+        "city": "Piracicaba",
+        "name": "GRABSEC / GRABSERV - Segurança e Vigilância Ltda.",
+        "rating": 4.2,
+        "address": "Tv. Portugal, 137 - Jardim Europa, Piracicaba - SP, 13416-470",
+        "url": ""
+      }
+    ],
+    "Franca": [
+      {
+        "city": "Franca",
+        "name": "Segurança e Vigilância Sudeste",
+        "rating": 4.7,
+        "address": "Av. Dom Pedro I, 159 - Jardim Riviera, Franca - SP, 14402-010",
+        "url": ""
+      },
+      {
+        "city": "Franca",
+        "name": "Blackout Monitoramento 24 Hs",
+        "rating": 4.6,
+        "address": "R. São Paulo, 660 - Vila Aparecida, Franca - SP, 14401-248",
+        "url": ""
+      },
+      {
+        "city": "Franca",
+        "name": "Scala Sistemas Eletrônicos Ltda EPP",
+        "rating": 4.3,
+        "address": "R. Afonso Pena, 410 - Vila Formosa, Franca - SP, 14405-148",
+        "url": ""
+      }
+    ],
+    "Bauru": [
+      {
+        "city": "Bauru",
+        "name": "Central de Monitoramento Bauru",
+        "rating": 4.7,
+        "address": "R. Treze de Maio, 20-61 - Vila Noemy, Bauru - SP, 17014-450",
+        "url": ""
+      },
+      {
+        "city": "Bauru",
+        "name": "Grupo Full Security",
+        "rating": 4.5,
+        "address": "R. Eduardo Vergueiro de Lorena, 5-75 - Jardim Aeroporto, Bauru - SP, 17012-450",
+        "url": ""
+      },
+      {
+        "city": "Bauru",
+        "name": "Jac Service Bauru Sistemas de Segurança",
+        "rating": 4.9,
+        "address": "R. Antônio Garcia, 10-66 - Vila Santa Tereza, Bauru - SP, 17012-050",
+        "url": ""
+      }
+    ],
+    "São Vicente": [
+      {
+        "city": "São Vicente",
+        "name": "Litoral Segurança Patrimonial",
+        "rating": 4.5,
+        "address": "R. João Ramalho, 422 - Centro, São Vicente - SP, 11310-050",
+        "url": ""
+      },
+      {
+        "city": "São Vicente",
+        "name": "Marvin Segurança Patrimonial",
+        "rating": 3.5,
+        "address": "R. Pero Correa, 563 - Itararé, São Vicente - SP, 11320-140",
+        "url": ""
+      },
+      {
+        "city": "São Vicente",
+        "name": "VSSEG - Soluções de Segurança - Vigilância Integrada",
+        "rating": 5.0,
+        "address": "Av. Prefeito José Monteiro, 773 - Jardim Independencia, São Vicente - SP, 11380-001",
+        "url": ""
+      }
+    ],
+    "Praia Grande": [
+      {
+        "city": "Praia Grande",
+        "name": "CTS Vigilância e Segurança - Filial Praia Grande",
+        "rating": 4.6,
+        "address": "Av. Miami, 119 - Vila Caiçara, Praia Grande - SP, 11706-110",
+        "url": ""
+      },
+      {
+        "city": "Praia Grande",
+        "name": "Fortes Segurança - Portaria Remota e Facilities",
+        "rating": 4.7,
+        "address": "Av. Presidente Kennedy, 4751 - Vila Caiçara, Praia Grande - SP, 11703-200",
+        "url": ""
+      },
+      {
+        "city": "Praia Grande",
+        "name": "Vig Bens Terceirização - Portaria - Limpeza",
+        "rating": 4.7,
+        "address": "R. Sebastião de Oliveira, 278 - Boqueirão, Praia Grande - SP, 11701-200",
+        "url": ""
+      }
+    ],
+    "Suzano": [
+      {
+        "city": "Suzano",
+        "name": "SR Segurança",
+        "rating": 4.8,
+        "address": "R. Pres. Nereu Ramos, 170 - Jardim Santa Helena, Suzano - SP, 08674-270",
+        "url": ""
+      },
+      {
+        "city": "Suzano",
+        "name": "Star Segurança",
+        "rating": 4.6,
+        "address": "R. João Balbino Dias, 200 - Conj. Res. Irai, Suzano - SP, 08673-120",
+        "url": ""
+      },
+      {
+        "city": "Suzano",
+        "name": "FERA Segurança - Empresa de segurança em Suzano",
+        "rating": 4.3,
+        "address": "R. Portugal Freixo, 242 - Sala 51 - Centro, Suzano - SP, 08674-170",
+        "url": ""
+      }
+    ],
+    "Taboão da Serra": [
+      {
+        "city": "Taboão da Serra",
+        "name": "Unity - Segurança Privada",
+        "rating": 4.8,
+        "address": "Estr. Benedito Cesário de Oliveira, 1672 - Vila Iasi, Taboão da Serra - SP, 06767-281",
+        "url": ""
+      },
+      {
+        "city": "Taboão da Serra",
+        "name": "Grupo Sangel - São Paulo",
+        "rating": 3.9,
+        "address": "R. Comendador Ângelo Rinaldi, 114 - Parque Santos Dumont, Taboão da Serra - SP, 06754-070",
+        "url": ""
+      },
+      {
+        "city": "Taboão da Serra",
+        "name": "PARS Monitoramento",
+        "rating": 5.0,
+        "address": "Estr. São Francisco, 2008 - Vila Sonia do Taboao, Taboão da Serra - SP, 06765-904",
+        "url": ""
+      }
+    ],
+    "Barueri": [
+      {
+        "city": "Barueri",
+        "name": "Gear Segurança e Serviços",
+        "rating": 4.8,
+        "address": "R. Caldas Novas, 50 - Sala 91 - Bethaville I, Barueri - SP, 06404-301",
+        "url": ""
+      },
+      {
+        "city": "Barueri",
+        "name": "GRUPO EFITEG Segurança e Serviços",
+        "rating": 4.6,
+        "address": "R. da Liberdade, 482 - Vila Boa Vista, Barueri - SP, 06411-070",
+        "url": ""
+      },
+      {
+        "city": "Barueri",
+        "name": "Grupo Petrus Segurança e Serviços",
+        "rating": 4.4,
+        "address": "R. Profa. Elvira Lefévre Sales Nemer, 40 - Jardim Sao Pedro, Barueri - SP, 06402-190",
+        "url": ""
+      }
+    ],
+    "Mogi das Cruzes": [
+      {
+        "city": "Mogi das Cruzes",
+        "name": "Grupo MC Segurança",
+        "rating": 4.5,
+        "address": "R. Professor Flaviano de Melo, 296 - Centro, Mogi das Cruzes - SP, 08710-620",
+        "url": ""
+      },
+      {
+        "city": "Mogi das Cruzes",
+        "name": "Líder Segurança",
+        "rating": 4.5,
+        "address": "Av. Fernando Costa, 200 - Centro, Mogi das Cruzes - SP, 08735-000",
+        "url": ""
+      },
+      {
+        "city": "Mogi das Cruzes",
+        "name": "Dimensão Segurança e Vigilância",
+        "rating": 4.0,
+        "address": "R. Antônia Veiga Ruíz, 21 - Vila Mogilar, Mogi das Cruzes - SP, 08773-060",
+        "url": ""
+      }
+    ],
+    "Taubaté": [
+      {
+        "city": "Taubaté",
+        "name": "Grupo TKA Segurança e Serviços",
+        "rating": 5.0,
+        "address": "Av. José Pedro da Cunha, 53 - Jardim Santa Cruz, Taubaté - SP, 12070-003",
+        "url": ""
+      },
+      {
+        "city": "Taubaté",
+        "name": "GRUPO GARRA - Proteção Patrimonial",
+        "rating": 4.7,
+        "address": "R. Juca Esteves, 559 - Centro, Taubaté - SP, 12080-330",
+        "url": ""
+      },
+      {
+        "city": "Taubaté",
+        "name": "Maximus Segurança - Monitoramento 24H",
+        "rating": 4.5,
+        "address": "R. Cel. Augusto Monteiro, 560 - Centro, Taubaté - SP, 12020-160",
+        "url": ""
+      }
+    ],
+    "Limeira": [
+      {
+        "city": "Limeira",
+        "name": "Prevseg Segurança Privada",
+        "rating": 4.5,
+        "address": "Av. Dr. Alfredo Ferraz de Abreu, 1394 - Centro, Limeira - SP, 13480-030",
+        "url": ""
+      },
+      {
+        "city": "Limeira",
+        "name": "Limer Safe Segurança e Tecnologia",
+        "rating": 5.0,
+        "address": "R. Vinte e Dois de Julho, 140 - Vila Cidade Jardim, Limeira - SP, 13482-162",
+        "url": ""
+      },
+      {
+        "city": "Limeira",
+        "name": "GrandSeg Segurança Inteligente",
+        "rating": 5.0,
+        "address": "R. Boa Morte, 1088 - Centro, Limeira - SP, 13480-182",
+        "url": ""
+      }
+    ],
+    "Indaiatuba": [
+      {
+        "city": "Indaiatuba",
+        "name": "GTA - Segurança & Serviços",
+        "rating": 4.5,
+        "address": "Alameda Comendador Dr. Santoro Mirone, 430/448 - Distrito Industrial, Indaiatuba - SP, 13347-405",
+        "url": ""
+      },
+      {
+        "city": "Indaiatuba",
+        "name": "Grupo AL2 - Vigilância, Portaria e Limpeza",
+        "rating": 4.6,
+        "address": "R. Edésio José Capovilla, 368 - Jardim Esplanada, Indaiatuba - SP, 13331-503",
+        "url": ""
+      },
+      {
+        "city": "Indaiatuba",
+        "name": "Pollo Segurança Patrimonial e Serviços",
+        "rating": 4.6,
+        "address": "Av. Conceição, 816 - Cidade Nova II, Indaiatuba - SP, 13335-410",
+        "url": ""
+      }
+    ],
+    "Itu": [
+      {
+        "city": "Itu",
+        "name": "Guarnieri Inteligência em Segurança",
+        "rating": 4.6,
+        "address": "Av. José Augusto Pickardt, 115, Itu - SP, 13303-527",
+        "url": ""
+      },
+      {
+        "city": "Itu",
+        "name": "Grupo Silver Segurança",
+        "rating": 4.3,
+        "address": "R. do Patrocínio, 212 - Centro, Itu - SP, 13300-200",
+        "url": ""
+      },
+      {
+        "city": "Itu",
+        "name": "Salto Segurança Brasil",
+        "rating": 5.0,
+        "address": "R. Me. Maria Basília, 580 - Centro, Itu - SP, 13300-003",
+        "url": ""
+      }
+    ],
+    "Marília": [
+      {
+        "city": "Marília",
+        "name": "Paradigma Segurança e Serviços - Portaria Remota",
+        "rating": 4.8,
+        "address": "R. José Freire Sobrinho, 509 - Res. Vale Verde, Marília - SP, 17514-014",
+        "url": ""
+      },
+      {
+        "city": "Marília",
+        "name": "SPSP - Segurança Patrimonial",
+        "rating": 4.6,
+        "address": "Av. Archimedes Manhães, 25 - Parque das Industrias, Marília - SP, 17521-460",
+        "url": ""
+      },
+      {
+        "city": "Marília",
+        "name": "JGL Segurança Eletrônica",
+        "rating": 5.0,
+        "address": "R. Álvares Cabral, 296 - Centro, Marília - SP, 17501-100",
+        "url": ""
+      }
+    ],
+    "Presidente Prudente": [
+      {
+        "city": "Presidente Prudente",
+        "name": "Security Segurança e Serviços",
+        "rating": 4.7,
+        "address": "Av. Cel. José Soares Marcondes, 555 - Vila Maristela, Presidente Prudente - SP, 19020-120",
+        "url": ""
+      },
+      {
+        "city": "Presidente Prudente",
+        "name": "Operacional Segurança e Vigilância",
+        "rating": 4.5,
+        "address": "R. Cândida Rodrigues Cassulino, 220 - Parque das Cerejeiras, Presidente Prudente - SP, 19061-290",
+        "url": ""
+      },
+      {
+        "city": "Presidente Prudente",
+        "name": "EMPRESA DE SEGURANÇA PRIVADA VENCESFORT",
+        "rating": 4.6,
+        "address": "Presidente Prudente - SP, 19062-000",
+        "url": ""
+      }
+    ],
+    "Araçatuba": [
+      {
+        "city": "Araçatuba",
+        "name": "Centerfort Segurança e Proteção S/C Ltda",
+        "rating": 5.0,
+        "address": "R. Tupinambás, 1185 - Morumbi, Araçatuba - SP, 16020-130",
+        "url": ""
+      },
+      {
+        "city": "Araçatuba",
+        "name": "Protege S/A Proteção e Transporte de Valores",
+        "rating": 4.6,
+        "address": "R. São Bernardo, 1260 - Planalto, Araçatuba - SP, 16075-013",
+        "url": ""
+      },
+      {
+        "city": "Araçatuba",
+        "name": "HERMAPA DISTRIBUIDORA DE SEGURANÇA ELETRÔNICA",
+        "rating": 4.8,
+        "address": "R. Aloísio de Azevedo, 115 - Novo Paraíso, Araçatuba - SP, 16074-080",
+        "url": ""
+      }
+    ],
+    "Araraquara": [
+      {
+        "city": "Araraquara",
+        "name": "Grupo Alvo Certo",
+        "rating": 4.7,
+        "address": "R. Gonçalves Dias, 1514 - Araraquara - SP, 14801-290",
+        "url": ""
+      },
+      {
+        "city": "Araraquara",
+        "name": "M&M Marques & Marques Segurança e Vigilância",
+        "rating": 4.8,
+        "address": "Av. Vinte e Dois de Agosto, 606 - Vila Xavier, Araraquara - SP, 14810-125",
+        "url": ""
+      },
+      {
+        "city": "Araraquara",
+        "name": "Consultec - Soluções Tecnológicas",
+        "rating": 5.0,
+        "address": "Alameda Paulista, 2306 - Jardim Paulistano, Araraquara - SP, 14810-282",
+        "url": ""
+      }
+    ],
+    "São Carlos": [
+      {
+        "city": "São Carlos",
+        "name": "GFS Segurança Ltda",
+        "rating": 4.4,
+        "address": "R. São Paulo, 1281 - Centro, São Carlos - SP, 13560-053",
+        "url": ""
+      },
+      {
+        "city": "São Carlos",
+        "name": "Engefort Sistema Avançado de Segurança",
+        "rating": 4.4,
+        "address": "Passeio das Quaresmeiras, 211 - Bela Vista, São Carlos - SP, 13561-350",
+        "url": ""
+      },
+      {
+        "city": "São Carlos",
+        "name": "JOBSEG - Monitoramento Eletrônico e Portaria Remota",
+        "rating": 4.0,
+        "address": "R. Nove de Julho, 1261 - Centro, São Carlos - SP, 13560-042",
+        "url": ""
+      }
+    ],
+    "Cotia": [
+      {
+        "city": "Cotia",
+        "name": "GRUPO CS SEGURANÇA SERVIÇOS E TREINAMENTOS",
+        "rating": 5.0,
+        "address": "R. Francisco Alves, 498 - Sala 2 - Parque Mirante da Mata, Cotia - SP, 06720-070",
+        "url": ""
+      },
+      {
+        "city": "Cotia",
+        "name": "Malci Segurança Patrimonial em Cotia",
+        "rating": 5.0,
+        "address": "R. Sudão, 95 - Recanto Vista Alegre, Cotia - SP, 06702-205",
+        "url": ""
+      },
+      {
+        "city": "Cotia",
+        "name": "Patria Facilities",
+        "rating": 4.2,
+        "address": "Av. Prof. Manoel José Pedroso, 1348 - Parque Bahia, Cotia - SP, 06717-100",
+        "url": ""
+      }
+    ],
+    "Hortolândia": [
+      {
+        "city": "Hortolândia",
+        "name": "VS Sistemas de Segurança",
+        "rating": 4.9,
+        "address": "R. Geraldo Denadai, 74 - Jardim das Paineiras, Hortolândia - SP, 13184-271",
+        "url": ""
+      },
+      {
+        "city": "Hortolândia",
+        "name": "Matrix Info Security System",
+        "rating": 4.9,
+        "address": "R. Nápoli, 241 - Jardim Res. Firenze, Hortolândia - SP, 13189-205",
+        "url": ""
+      },
+      {
+        "city": "Hortolândia",
+        "name": "Absoluta Segurança Patrimonial",
+        "rating": 5.0,
+        "address": "Av. da Emancipação, 3770 - Jardim Santa Clara do Lago, Hortolândia - SP, 13186-410",
+        "url": ""
+      }
+    ],
+    "Sumaré": [
+      {
+        "city": "Sumaré",
+        "name": "Empresa de Segurança J.D Almeida Security",
+        "rating": 4.9,
+        "address": "R. Guilherme Müler, 76 - Jardim Sao Roque, Sumaré - SP, 13171-040",
+        "url": ""
+      },
+      {
+        "city": "Sumaré",
+        "name": "Scudo Segurança e Serviços",
+        "rating": 5.0,
+        "address": "Av. Fuad Assef Maluf, 250 - Casa 3 - Bela Vista II, Sumaré - SP, 13175-090",
+        "url": ""
+      },
+      {
+        "city": "Sumaré",
+        "name": "NR Segurança Patrimonial e Serviços",
+        "rating": 5.0,
+        "address": "R. João Jacobe Rohweder - Jardim Alvorada, Sumaré - SP, 13170-584",
+        "url": ""
+      }
+    ],
+    "Santa Bárbara d'Oeste": [
+      {
+        "city": "Santa Bárbara d'Oeste",
+        "name": "NEW FORCE Monitoramento 24h e Segurança Eletrônica",
+        "rating": 4.9,
+        "address": "Av. Conceição Martins Machado, 180 - Santa Bárbara d'Oeste - SP, 13456-677",
+        "url": ""
+      },
+      {
+        "city": "Santa Bárbara d'Oeste",
+        "name": "Barra Zero - Segurança Eletrônica",
+        "rating": 4.8,
+        "address": "R. do Café, 874 - Jardim Perola, Santa Bárbara d'Oeste - SP, 13454-171",
+        "url": ""
+      },
+      {
+        "city": "Santa Bárbara d'Oeste",
+        "name": "Proteja-se Segurança & Serviços",
+        "rating": 4.6,
+        "address": "R. Riachuelo, 445 - Centro, Santa Bárbara d'Oeste - SP, 13450-020",
+        "url": ""
+      }
+    ],
+    "Jacareí": [
+      {
+        "city": "Jacareí",
+        "name": "Panther Segurança - Sede Jacareí",
+        "rating": 4.8,
+        "address": "Av. Bruno Decária, 111 - Parque Brasil, Jacareí - SP, 12328-410",
+        "url": ""
+      },
+      {
+        "city": "Jacareí",
+        "name": "Maximus Segurança - Monitoramento 24H e Portaria Virtual",
+        "rating": 4.7,
+        "address": "Av. Avarei, 218 - Avareí, Jacareí - SP, 12328-000",
+        "url": ""
+      },
+      {
+        "city": "Jacareí",
+        "name": "Arcanjo Segurança e Vigilância",
+        "rating": 4.9,
+        "address": "R. João Alves dos Santos, 11 - Jardim Terras de Sao Joao, Jacareí - SP, 12324-783",
+        "url": ""
+      }
+    ],
+    "Caçapava": [
+      {
+        "city": "Caçapava",
+        "name": "GÊNESIS-SEG ZELADORIA E MONITORAMENTO 24H",
+        "rating": 4.2,
+        "address": "R. Edgar Portes, 250 - Jardim América, Caçapava - SP, 12281-150",
+        "url": ""
+      },
+      {
+        "city": "Caçapava",
+        "name": "Castro Pontes Segurança Privada",
+        "rating": 2.9,
+        "address": "R. Padre José Benedito Alves Monteiro, 418 - Vila Santos, Caçapava - SP, 12280-016",
+        "url": ""
+      },
+      {
+        "city": "Caçapava",
+        "name": "CELER SEGURANÇA PRIVADA",
+        "rating": 1.0,
+        "address": "R. Marquês de Herval, 395 - Centro, Caçapava - SP, 12281-510",
+        "url": ""
+      }
+    ],
+    "Botucatu": [
+      {
+        "city": "Botucatu",
+        "name": "Grupo Lastro Segurança e Facilities",
+        "rating": 4.4,
+        "address": "R. Pinheiro Machado, 581 - Centro, Botucatu - SP, 18602-170",
+        "url": ""
+      },
+      {
+        "city": "Botucatu",
+        "name": "Peres Sistemas de Segurança",
+        "rating": 4.7,
+        "address": "R. Antônio Amando de Barros, 52 - Vila Cidade Jardim, Botucatu - SP, 18601-260",
+        "url": ""
+      },
+      {
+        "city": "Botucatu",
+        "name": "Alarvision Sistemas De Segurança",
+        "rating": 4.9,
+        "address": "R. Brás de Assis, 116 - Vila dos Lavradores, Botucatu - SP, 18609-057",
+        "url": ""
+      }
+    ],
+    "Rio Claro": [
+      {
+        "city": "Rio Claro",
+        "name": "ESP System Security",
+        "rating": 4.9,
+        "address": "Avenida 64A, 554 - Jardim America, Rio Claro - SP, 13506-057",
+        "url": ""
+      },
+      {
+        "city": "Rio Claro",
+        "name": "GRUPO SEMPREL - SEGURANÇA E FACILITIES",
+        "rating": 4.6,
+        "address": "Av. M 27, 32 - Jardim Floridiana, Rio Claro - SP, 13505-006",
+        "url": ""
+      },
+      {
+        "city": "Rio Claro",
+        "name": "AML VIGILANCIA",
+        "rating": 4.4,
+        "address": "Av. 6, 973 - Centro, Rio Claro - SP, 13500-430",
+        "url": ""
+      }
+    ]
+  }
+}

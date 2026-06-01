@@ -1,0 +1,257 @@
+/* ============================================================
+   ANIMATIONS.CSS — Keyframes, Transitions, Motion Classes
+   Cota Facilities
+   ============================================================ */
+
+/* ── Aurora Rotation ─────────────────────────────────────── */
+@keyframes aurora-rotate {
+  0%   { transform: rotate(0deg)   scale(1.00); }
+  25%  { transform: rotate(90deg)  scale(1.04); }
+  50%  { transform: rotate(180deg) scale(1.00); }
+  75%  { transform: rotate(270deg) scale(0.96); }
+  100% { transform: rotate(360deg) scale(1.00); }
+}
+
+/* ── Blob Morph 1 (large purple, top-left) ───────────────── */
+@keyframes blob-morph-1 {
+  0%, 100% {
+    border-radius: 62% 38% 72% 28% / 52% 64% 36% 48%;
+    transform: translate(0px, 0px) scale(1.00);
+  }
+  20% {
+    border-radius: 38% 62% 45% 55% / 68% 32% 70% 30%;
+    transform: translate(45px, -35px) scale(1.07);
+  }
+  45% {
+    border-radius: 72% 28% 55% 45% / 35% 72% 48% 52%;
+    transform: translate(-25px, 55px) scale(0.93);
+  }
+  70% {
+    border-radius: 28% 72% 62% 38% / 65% 35% 72% 28%;
+    transform: translate(30px, 18px) scale(1.04);
+  }
+}
+
+/* ── Blob Morph 2 (large blue, bottom-right) ─────────────── */
+@keyframes blob-morph-2 {
+  0%, 100% {
+    border-radius: 42% 58% 52% 48% / 62% 38% 65% 35%;
+    transform: translate(0px, 0px) scale(1.00);
+  }
+  30% {
+    border-radius: 62% 38% 38% 62% / 38% 64% 52% 48%;
+    transform: translate(-55px, 40px) scale(1.09);
+  }
+  60% {
+    border-radius: 52% 48% 65% 35% / 52% 52% 38% 62%;
+    transform: translate(38px, -50px) scale(0.88);
+  }
+}
+
+/* ── Blob Morph 3 (medium lime, center) ──────────────────── */
+@keyframes blob-morph-3 {
+  0%, 100% {
+    border-radius: 52% 48% 62% 38% / 42% 62% 52% 58%;
+    transform: translate(0px, 0px) scale(1.00);
+  }
+  40% {
+    border-radius: 72% 28% 42% 58% / 62% 72% 28% 42%;
+    transform: translate(-38px, -28px) scale(1.18);
+  }
+  80% {
+    border-radius: 35% 65% 55% 45% / 52% 35% 68% 32%;
+    transform: translate(22px, 30px) scale(0.85);
+  }
+}
+
+/* ── Blob Morph 4 (small violet, top-right) ──────────────── */
+@keyframes blob-morph-4 {
+  0%, 100% {
+    border-radius: 32% 68% 42% 58% / 52% 42% 62% 48%;
+    transform: translate(0px, 0px) scale(1.00);
+  }
+  35% {
+    border-radius: 62% 38% 72% 28% / 32% 62% 42% 68%;
+    transform: translate(32px, 42px) scale(0.86);
+  }
+  70% {
+    border-radius: 42% 58% 32% 68% / 72% 38% 62% 28%;
+    transform: translate(-28px, -18px) scale(1.14);
+  }
+}
+
+/* ── Reveal (initial state for GSAP) ────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* ── Floating Particle ───────────────────────────────────── */
+@keyframes float-particle {
+  0%   { transform: translateY(0) translateX(0) scale(1); opacity: 0.08; }
+  50%  { transform: translateY(-30px) translateX(15px) scale(1.1); opacity: 0.18; }
+  100% { transform: translateY(-60px) translateX(-10px) scale(0.9); opacity: 0.05; }
+}
+
+/* ── Badge Pulse ─────────────────────────────────────────── */
+@keyframes pulse-badge {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.85); }
+}
+
+/* ── Float Badges (hero mockup decorations) ──────────────── */
+@keyframes float-badge-top {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%       { transform: translateY(-8px) rotate(1deg); }
+}
+
+@keyframes float-badge-bottom {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%       { transform: translateY(8px) rotate(-1deg); }
+}
+
+/* ── Scroll Wheel ────────────────────────────────────────── */
+@keyframes scroll-wheel {
+  0%   { opacity: 1; transform: translateY(0); }
+  60%  { opacity: 0; transform: translateY(12px); }
+  61%  { opacity: 0; transform: translateY(0); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Shimmer (loading state) ─────────────────────────────── */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* ── Grain Texture ───────────────────────────────────────── */
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  10%       { transform: translate(-2%, -3%); }
+  20%       { transform: translate(3%, 2%); }
+  30%       { transform: translate(-1%, 4%); }
+  40%       { transform: translate(4%, -1%); }
+  50%       { transform: translate(-3%, 1%); }
+  60%       { transform: translate(1%, -4%); }
+  70%       { transform: translate(-4%, 2%); }
+  80%       { transform: translate(2%, 3%); }
+  90%       { transform: translate(-1%, -2%); }
+}
+
+/* ── Glow Pulse ──────────────────────────────────────────── */
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.15; transform: scale(1); }
+  50%       { opacity: 0.3; transform: scale(1.05); }
+}
+
+/* ── Spin (loading) ──────────────────────────────────────── */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ── Hero grain overlay ──────────────────────────────────── */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.018;
+  pointer-events: none;
+  z-index: 0;
+  animation: grain 8s steps(8) infinite;
+}
+
+/* ── Glow pulse on background ────────────────────────────── */
+.hero-glow-bg {
+  animation: glow-pulse 4s ease-in-out infinite;
+}
+
+/* ── Step connector animation ────────────────────────────── */
+.step-connector::after {
+  content: '→';
+  position: absolute;
+  right: -8px;
+  top: -10px;
+  color: rgba(123,47,190,0.4);
+  font-size: 14px;
+}
+
+/* ── Transition utility classes ──────────────────────────── */
+.transition-all    { transition: all var(--duration-base) var(--ease-out); }
+.transition-fast   { transition: all var(--duration-fast) var(--ease-out); }
+.transition-slow   { transition: all var(--duration-slow) var(--ease-out); }
+
+/* ── Entrance animation classes (GSAP adds these) ────────── */
+.is-visible {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* ── Service icon hover pulse ────────────────────────────── */
+.service-card:hover .service-icon-wrap svg {
+  animation: icon-pulse 0.4s var(--ease-spring);
+}
+
+@keyframes icon-pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.2) rotate(5deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+/* ── Form step transitions (managed by GSAP) ─────────────── */
+.form-step {
+  will-change: transform, opacity;
+}
+
+/* ── CTA button shimmer on hover ─────────────────────────── */
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transform: skewX(-20deg);
+  transition: left 0s;
+}
+
+.btn-primary:hover::after {
+  left: 160%;
+  transition: left 0.5s ease;
+}
+
+/* ── Stat number glow ────────────────────────────────────── */
+.stat-item:hover .stat-number {
+  filter: drop-shadow(0 0 20px rgba(132, 204, 22, 0.5));
+}
+
+/* ── Partner logo scroll animation ──────────────────────── */
+@media (prefers-reduced-motion: no-preference) {
+  .partners-logos {
+    overflow: hidden;
+    position: relative;
+  }
+}
+
+/* ── Focus Visible ───────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--color-purple);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── Reduced motion fallback ─────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,0 +1,209 @@
+/* ============================================================
+   MAIN.CSS — Variables, Reset, Typography, Utilities
+   Cota Facilities
+   ============================================================ */
+
+/* ── Custom Properties ──────────────────────────────────── */
+:root {
+  /* Brand Colors */
+  --color-navy:        #0F172A;
+  --color-navy-mid:    #1E293B;
+  --color-navy-light:  #334155;
+  --color-royal:       #1B3A8C;
+  --color-purple:      #7B2FBE;
+  --color-purple-dark: #5B1F8E;
+  --color-lime:        #84CC16;
+  --color-lime-dark:   #65A30D;
+  --color-white:       #FFFFFF;
+  --color-muted:       #94A3B8;
+  --color-border:      rgba(255, 255, 255, 0.08);
+
+  /* Gradients */
+  --gradient-hero:     linear-gradient(135deg, #0F172A 0%, #1B3A8C 55%, #7B2FBE 100%);
+  --gradient-purple:   linear-gradient(135deg, #5B1F8E 0%, #7B2FBE 100%);
+  --gradient-royal:    linear-gradient(135deg, #1B3A8C 0%, #2D5CC8 100%);
+  --gradient-cta:      linear-gradient(90deg, #7B2FBE, #1B3A8C);
+  --gradient-lime:     linear-gradient(135deg, #65A30D, #84CC16);
+  --gradient-stats:    radial-gradient(ellipse at center, #2D1B54 0%, #0F172A 70%);
+
+  /* Amber / Yellow */
+  --color-amber-bg:  #FFF7E6;
+  --color-amber-mid: #FEF3C7;
+  --color-amber:     #F59E0B;
+  --color-amber-dark:#D97706;
+
+  /* Shadows */
+  --shadow-sm:    0 2px 8px rgba(0,0,0,0.3);
+  --shadow-md:    0 8px 24px rgba(0,0,0,0.4);
+  --shadow-lg:    0 20px 60px rgba(0,0,0,0.5);
+  --shadow-purple: 0 8px 32px rgba(123,47,190,0.4);
+  --shadow-lime:   0 4px 20px rgba(132,204,22,0.35);
+  --shadow-glow:   0 0 60px rgba(123,47,190,0.2);
+
+  /* Typography */
+  --font-family:  'Outfit', system-ui, -apple-system, sans-serif;
+  --font-display: 700;
+  --font-heading: 600;
+  --font-body:    400;
+  --font-light:   300;
+
+  /* Spacing scale (8px base) */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  /* Border Radius */
+  --radius-sm:   8px;
+  --radius-md:   12px;
+  --radius-lg:   18px;
+  --radius-xl:   24px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast: 150ms;
+  --duration-base: 300ms;
+  --duration-slow: 600ms;
+
+  /* Layout */
+  --container-max: 1200px;
+  --container-pad: clamp(16px, 5vw, 80px);
+}
+
+/* ── CSS Reset ───────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: 17px;
+  font-weight: var(--font-body);
+  line-height: 1.6;
+  color: var(--color-white);
+  background-color: var(--color-navy);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: var(--font-family);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input, select, textarea {
+  font-family: var(--font-family);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ── Typography ─────────────────────────────────────────── */
+h1, h2, h3, h4, h5 {
+  line-height: 1.15;
+  font-weight: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: clamp(40px, 6vw, 72px); letter-spacing: -0.03em; }
+h2 { font-size: clamp(30px, 4vw, 48px); }
+h3 { font-size: clamp(20px, 2.5vw, 26px); }
+h4 { font-size: 18px; }
+h5 { font-size: 14px; font-weight: var(--font-heading); letter-spacing: 0.05em; text-transform: uppercase; }
+
+p {
+  line-height: 1.7;
+  color: var(--color-muted);
+}
+
+strong { font-weight: var(--font-heading); color: var(--color-white); }
+
+/* ── Utilities ───────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 12px;
+  font-weight: var(--font-heading);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-lime);
+  background: rgba(132, 204, 22, 0.1);
+  border: 1px solid rgba(132, 204, 22, 0.25);
+  border-radius: var(--radius-full);
+  padding: var(--space-1) var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.section-tag--light {
+  color: var(--color-white);
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.15);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 640px;
+  margin-inline: auto;
+  margin-bottom: var(--space-16);
+}
+
+.section-header h2 {
+  margin-bottom: var(--space-4);
+}
+
+.section-header p {
+  font-size: 18px;
+  font-weight: var(--font-light);
+}
+
+/* ── Scrollbar ───────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-navy); }
+::-webkit-scrollbar-thumb { background: var(--color-navy-light); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-purple); }
+
+/* ── Selection ───────────────────────────────────────────── */
+::selection {
+  background: rgba(123, 47, 190, 0.4);
+  color: var(--color-white);
+}
