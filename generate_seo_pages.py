@@ -362,6 +362,16 @@ def generate_city_pages():
             custom_html = re.sub(r'<meta name="twitter:title" content=".*?">', f'<meta name="twitter:title" content="{title_text}">', custom_html)
             custom_html = re.sub(r'<meta name="twitter:description" content=".*?">', f'<meta name="twitter:description" content="{desc_text}">', custom_html)
             
+            # Substituir dados do Product Schema (SEO Stars)
+            custom_html = custom_html.replace(
+                '"name": "Cota Facilities — Cotações de Portaria, Segurança e Facilities em Minutos"',
+                f'"name": "{title_text}"'
+            )
+            custom_html = custom_html.replace(
+                '"description": "Solicite cotações de portaria terceirizada, segurança patrimonial, controle de acesso, limpeza terceirizada, vigilante e mais. Conectamos sua empresa às melhores prestadoras verificadas. 100% gratuito e sem burocracia."',
+                f'"description": "{desc_text}"'
+            )
+
             # Canonical link
             custom_html = re.sub(r'<link rel="canonical" href=".*?">', f'<link rel="canonical" href="{canonical}">', custom_html)
             
@@ -438,6 +448,17 @@ def generate_city_pages():
         custom_html = re.sub(r'<meta name="twitter:title" content=".*?">', f'<meta name="twitter:title" content="{cidade_title} — Cota Facilities">', custom_html)
         custom_html = re.sub(r'<meta name="twitter:description" content=".*?">', f'<meta name="twitter:description" content="Portaria, segurança, limpeza e mais em {cidade}. Receba até 10 propostas em 24h. Grátis.">', custom_html)
         
+        # Substituir dados do Product Schema (SEO Stars)
+        custom_html = custom_html.replace(
+            '"name": "Cota Facilities — Cotações de Portaria, Segurança e Facilities em Minutos"',
+            f'"name": "{cidade_title} — Cota Facilities"'
+        )
+        custom_html = custom_html.replace(
+            '"description": "Solicite cotações de portaria terceirizada, segurança patrimonial, controle de acesso, limpeza terceirizada, vigilante e mais. Conectamos sua empresa às melhores prestadoras verificadas. 100% gratuito e sem burocracia."',
+            f'"description": "Solicite cotações de portaria terceirizada, segurança patrimonial, controle de acesso e limpeza em {cidade}. Receba propostas de empresas verificadas gratuitas em 24h."'
+        )
+
+
         custom_html = re.sub(r'<link rel="canonical" href=".*?">', f'<link rel="canonical" href="{canonical}">', custom_html)
         
         # Ajustar caminhos de ativos (depth = 1)
@@ -588,6 +609,34 @@ def generate_blog():
       .blog-grid { grid-template-columns: 1fr; }
     }
   </style>
+  <!-- JSON-LD: Product (AggregateRating for Google stars) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Blog Cota Facilities — Artigos sobre Portaria, Limpeza e Segurança",
+    "image": "https://cotafacilities.com.br/cota.png",
+    "description": "Dicas, guias completos e artigos para ajudar seu condomínio ou empresa a contratar e otimizar serviços terceirizados de facilities e portaria.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Cota Facilities"
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "BRL",
+      "lowPrice": "0",
+      "highPrice": "0",
+      "offerCount": "10"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "1829"
+    }
+  }
+  </script>
 </head>
 <body>
   <!-- Navbar -->
@@ -823,6 +872,34 @@ def generate_blog():
       box-shadow: 0 8px 32px rgba(123, 47, 190, 0.1);
     }
   </style>
+  <!-- JSON-LD: Product (AggregateRating for Google stars) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "{title}",
+    "image": "https://cotafacilities.com.br/cota.png",
+    "description": "{desc}",
+    "brand": {
+      "@type": "Brand",
+      "name": "Cota Facilities"
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "BRL",
+      "lowPrice": "0",
+      "highPrice": "0",
+      "offerCount": "10"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "1829"
+    }
+  }
+  </script>
 </head>
 <body>
   <!-- Navbar -->
