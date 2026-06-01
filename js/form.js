@@ -296,6 +296,7 @@
       .then(res => res.json())
       .then(db => {
         // Coletar empresas de TODAS as categorias do JSON para a cidade selecionada
+        // (funciona independente do nome da aba: "Empresas de Segurança", "Sheet1", etc.)
         let allCompanies = [];
         Object.values(db).forEach(cidadesObj => {
           if (cidadesObj[selectedCity]) {
