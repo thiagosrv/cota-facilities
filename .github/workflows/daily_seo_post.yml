@@ -1,0 +1,41 @@
+name: Daily SEO Post Automation
+
+on:
+  schedule:
+    # Executa todos os dias às 12:00 UTC (09:00 BRT)
+    - cron: '0 12 * * *'
+  workflow_dispatch:
+    # Permite execução manual a partir da interface do GitHub
+
+jobs:
+  post-pages:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Execute Daily Post Script
+        run: python daily_post.py
+
+      - name: Check for Changes
+        id: git-check
+        run: |
+          git status --porcelain
+          echo "changes=$(git status --porcelain | wc -l)" >> $GITHUB_ENV
+
+      - name: Commit and Push Changes
+        if: env.changes > 0
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "style(seo): postagem automatica de 3 novas paginas [skip ci]"
+          git push origin main
