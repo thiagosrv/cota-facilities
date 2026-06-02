@@ -249,6 +249,7 @@ def adjust_assets_path(html_content, depth):
     adjusted = adjusted.replace('src="js/', f'src="{prefix}js/')
     adjusted = adjusted.replace('src="cota.png"', f'src="{prefix}cota.png"')
     adjusted = adjusted.replace('src="vdo.mp4"', f'src="{prefix}vdo.mp4"')
+    adjusted = adjusted.replace('href="imagem.jpg"', f'href="{prefix}imagem.jpg"')
     
     # Ajustar links do navbar para irem para a home raiz com a âncora correta
     adjusted = adjusted.replace('href="#como-funciona"', f'href="{prefix}#como-funciona"')
@@ -512,6 +513,7 @@ def generate_blog():
   <title>Blog Cota Facilities — Artigos sobre Portaria, Limpeza e Segurança</title>
   <meta name="description" content="Dicas, guias completos e artigos para ajudar seu condomínio ou empresa a contratar e otimizar serviços terceirizados de facilities e portaria.">
   <link rel="canonical" href="https://cotafacilities.com.br/blog/">
+  <link rel="icon" type="image/jpeg" href="../imagem.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -805,6 +807,7 @@ def generate_blog():
   <title>{title} — Cota Facilities</title>
   <meta name="description" content="{desc}">
   <link rel="canonical" href="https://cotafacilities.com.br/blog/artigos/{slug}.html">
+  <link rel="icon" type="image/jpeg" href="../../imagem.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
