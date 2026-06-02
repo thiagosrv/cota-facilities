@@ -202,7 +202,8 @@ def adjust_assets_path(html_content, depth):
     adjusted = adjusted.replace('src="js/', f'src="{prefix}js/')
     adjusted = adjusted.replace('src="cota.png"', f'src="{prefix}cota.png"')
     adjusted = adjusted.replace('src="vdo.mp4"', f'src="{prefix}vdo.mp4"')
-    adjusted = adjusted.replace('href="imagem.jpg"', f'href="{prefix}imagem.jpg"')
+    adjusted = adjusted.replace('href="cotafacilities.jpg"', f'href="{prefix}cotafacilities.jpg"')
+    adjusted = adjusted.replace('src="imagem.jpg"', f'src="{prefix}imagem.jpg"')
     
     # Ajustar links do navbar para irem para a home raiz com a âncora correta
     adjusted = adjusted.replace('href="#como-funciona"', f'href="{prefix}#como-funciona"')
@@ -381,9 +382,17 @@ def main():
         print("Tudo publicado! Não há novas landing pages a serem geradas.")
         sys.exit(0)
         
-    # Pegar exatamente a primeira da fila para a publicação incremental
-    to_publish = candidates[:1]
-    print(f"Páginas selecionadas para publicação nesta rodada ({len(to_publish)} de 1 planejada):")
+    if force:
+        to_publish = [c for c in candidates if c["full_slug"] in published_slugs]
+        print(f"Forçando a regeneração de {len(to_publish)} páginas já publicadas.")
+    else:
+        to_publish = candidates[:1]
+        
+    if not to_publish:
+        print("Nenhuma página para processar.")
+        sys.exit(0)
+        
+    print(f"Páginas selecionadas para publicação/regeneração nesta rodada:")
     for item in to_publish:
         print(f"  - Linha {item['line_number']}: {item['titulo']} (/{item['full_slug']}/)")
         

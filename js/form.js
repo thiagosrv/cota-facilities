@@ -313,7 +313,11 @@
     // PS Proteção ocupa 1 vaga; as demais são dinâmicas
     const maxDynamic = qty - 1;
 
-    fetch('./js/companies-db.json')
+    // Detectar prefixo de caminho relativo baseado no CSS da página
+    const cssLink = document.querySelector('link[href*="css/layout.css"]') || document.querySelector('link[href*="css/main.css"]');
+    const pathPrefix = cssLink ? cssLink.getAttribute('href').split('css/')[0] : '';
+
+    fetch(pathPrefix + 'js/companies-db.json')
       .then(res => res.json())
       .then(db => {
         // Coletar empresas de TODAS as categorias do JSON para a cidade selecionada
@@ -351,7 +355,7 @@
             <div class="cr-body">
               <div class="cr-main-content">
                 <div class="cr-avatar-wrap">
-                  <span class="cr-logo-fallback" style="background:linear-gradient(135deg,#1B3A8C,#7B2FBE)">PS</span>
+                  <img src="${pathPrefix}imagem.jpg" class="cr-logo-img" alt="PS Proteção">
                 </div>
                 <div class="cr-info">
                   <div class="cr-title-row">
