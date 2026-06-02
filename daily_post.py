@@ -3,7 +3,7 @@
 """
 Script de automação para publicação diária incremental de Landing Pages
 baseado em um banco de dados hospedado no Google Sheets.
-Gera exatamente 3 páginas por execução, atualiza o sitemap.xml e published_pages.json.
+Gera exatamente 1 página por execução, atualiza o sitemap.xml e published_pages.json.
 """
 
 import os
@@ -380,11 +380,11 @@ def main():
         print("Tudo publicado! Não há novas landing pages a serem geradas.")
         sys.exit(0)
         
-    # Pegar exatamente as 3 primeiras da fila para a publicação diária
-    to_publish = candidates[:3]
-    print(f"Páginas selecionadas para publicação hoje ({len(to_publish)} de 3 planejadas):")
+    # Pegar exatamente a primeira da fila para a publicação incremental
+    to_publish = candidates[:1]
+    print(f"Páginas selecionadas para publicação nesta rodada ({len(to_publish)} de 1 planejada):")
     for item in to_publish:
-        print(f"  - Linha {item['line_number']}: {item['titulo']} em {item['cidade']} (/{item['full_slug']}/)")
+        print(f"  - Linha {item['line_number']}: {item['titulo']} (/{item['full_slug']}/)")
         
     # 4. Carregar Template HTML
     if not os.path.exists(TEMPLATE_PATH):
