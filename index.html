@@ -231,25 +231,36 @@
   }
   </script>
 
-  <!-- Fonts -->
+  <!-- Resource hints -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 
-  <!-- CSS -->
+  <!-- Google Fonts — assíncrono (não bloqueia renderização) -->
+  <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap">
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap"
+        media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap">
+  </noscript>
+
+  <!-- CSS (4 arquivos separados para cache granular) -->
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/animations.css">
 
-  <!-- GSAP -->
+  <!-- GSAP core apenas — ScrollTrigger removido (substituído por IntersectionObserver) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 
   <!-- JS -->
   <script src="js/counters.js" defer></script>
-  <script src="js/form.js?v=1.3" defer></script>
-  <script src="js/main.js" defer></script>
+  <script src="js/form.js?v=1.4" defer></script>
+  <script src="js/main.js?v=2.0" defer></script>
 </head>
 <body>
 

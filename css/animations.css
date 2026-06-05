@@ -80,11 +80,16 @@
   }
 }
 
-/* ── Reveal (initial state for GSAP) ────────────────────── */
+/* ── Reveal — IntersectionObserver adiciona .is-visible ─── */
 .reveal {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(28px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+  will-change: opacity, transform;
 }
+
+/* Stagger via CSS custom property (setada pelo JS) */
+.reveal { transition-delay: var(--reveal-delay, 0ms); }
 
 /* ── Floating Particle ───────────────────────────────────── */
 @keyframes float-particle {
