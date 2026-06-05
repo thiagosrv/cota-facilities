@@ -325,7 +325,7 @@
 
   /* ── Envio de email via Web3Forms ─────────────────────────── */
   function sendLeadEmail() {
-    const WEB3FORMS_KEY = 'COLE_SUA_CHAVE_AQUI'; // ← substitua pela sua chave
+    const WEB3FORMS_KEY = '602baaf8-784e-436a-ac5b-1d9e66b38d5d';
 
     const serviceLabels = {
       'portaria':       'Portaria & Recepção',
