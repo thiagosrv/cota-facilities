@@ -2892,6 +2892,128 @@
   background: rgba(132,204,22,0.04);
 }
 
+/* ── Success Phase ────────────────────────────────────────── */
+.success-phase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-6);
+  padding: var(--space-8) var(--space-4);
+}
+
+.success-icon-wrap {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.success-ring {
+  position: absolute;
+  inset: 0;
+  width: 90px;
+  height: 90px;
+  transform: rotate(-90deg);
+}
+
+.success-ring-track {
+  stroke: rgba(132, 204, 22, 0.15);
+  stroke-width: 3;
+}
+
+.success-ring-fill {
+  stroke: #84CC16;
+  stroke-width: 3;
+  stroke-dasharray: 226;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+}
+
+.success-check {
+  width: 44px;
+  height: 44px;
+  position: relative;
+  z-index: 1;
+}
+
+.success-check-path {
+  stroke-dasharray: 60;
+  stroke-dashoffset: 0;
+}
+
+.success-header { max-width: 420px; }
+
+.success-title {
+  font-size: clamp(20px, 3vw, 26px);
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: var(--space-2);
+}
+
+.success-desc {
+  font-size: 15px;
+  color: var(--color-muted);
+  line-height: 1.6;
+}
+
+.success-desc strong { color: #84CC16; }
+
+.success-summary {
+  width: 100%;
+  max-width: 400px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.summary-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: 13px;
+}
+
+.summary-label {
+  color: var(--color-muted);
+  min-width: 60px;
+}
+
+.summary-value {
+  color: var(--color-white);
+  font-weight: 600;
+  flex: 1;
+  text-align: left;
+}
+
+.success-badges {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.success-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.65);
+  background: rgba(132,204,22,0.08);
+  border: 1px solid rgba(132,204,22,0.18);
+  border-radius: 20px;
+  padding: 4px 10px;
+}
+
 .results-footer-note {
   display: flex;
   align-items: center;

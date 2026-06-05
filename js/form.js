@@ -269,39 +269,105 @@
     }, TICK);
   }
 
-  /* ── Show Results ─────────────────────────────────────────── */
+  /* ── Show Success Screen ──────────────────────────────────── */
   function showResults() {
     const loadingPhase = document.getElementById('resultsLoadingPhase');
     const resultsPhase = document.getElementById('resultsPhase');
-    const countEl      = document.getElementById('resultsCount');
-    const container    = document.getElementById('companiesList');
-
-    const qty = parseInt(state.data.quotes) || 5;
-    if (countEl) countEl.textContent = Math.min(qty, 5) + ' empresas verificadas';
 
     if (loadingPhase) loadingPhase.style.display = 'none';
-    if (resultsPhase) {
-      resultsPhase.style.display = 'block';
+    if (!resultsPhase) return;
 
-      // Buscar e renderizar dados
-      fetchAndRenderResults(container);
+    // Preencher resumo do pedido
+    const serviceLabels = {
+      'portaria':       'Portaria & Recepção',
+      'controle-acesso':'Controle de Acesso',
+      'seguranca':      'Segurança Patrimonial',
+      'limpeza':        'Limpeza & Conservação',
+      'manutencao':     'Manutenção Predial',
+      'mao-de-obra':    'Mão de Obra Especializada'
+    };
+    const quotesLabels = { '3': '3 cotações', '5': '5 cotações', '10': '10+ cotações' };
 
-      if (typeof gsap !== 'undefined') {
-        // Aguardar um tick para renderizar antes de animar
-        setTimeout(() => {
-          gsap.from('.results-header', { y: 20, opacity: 0, duration: 0.5, ease: 'power2.out' });
-          gsap.from('.company-result', {
-            y: 24, opacity: 0, stagger: 0.1, duration: 0.45,
-            ease: 'power2.out', delay: 0.3
-          });
-          gsap.from('.results-footer-note', { y: 10, opacity: 0, duration: 0.4, delay: 0.9 });
-          gsap.from('.btn-new-quote', { scale: 0.92, opacity: 0, duration: 0.5, ease: 'elastic.out(1,0.5)', delay: 1 });
-        }, 50);
-      }
+    const summaryService = document.getElementById('summaryService');
+    const summaryCity    = document.getElementById('summaryCity');
+    const summaryQuotes  = document.getElementById('summaryQuotes');
+    const summaryContact = document.getElementById('summaryContact');
+
+    if (summaryService) summaryService.textContent = serviceLabels[state.data.service] || state.data.service || '—';
+    if (summaryCity)    summaryCity.textContent    = state.data.city || '—';
+    if (summaryQuotes)  summaryQuotes.textContent  = quotesLabels[state.data.quotes] || state.data.quotes || '—';
+    if (summaryContact) summaryContact.textContent = state.data.name ? `${state.data.name} · ${state.data.phone}` : '—';
+
+    resultsPhase.style.display = 'block';
+
+    // Animar checkmark SVG
+    const checkPath = resultsPhase.querySelector('.success-check-path');
+    if (checkPath && typeof gsap !== 'undefined') {
+      const len = checkPath.getTotalLength ? checkPath.getTotalLength() : 60;
+      gsap.set(checkPath, { strokeDasharray: len, strokeDashoffset: len });
+      gsap.to(checkPath, { strokeDashoffset: 0, duration: 0.6, ease: 'power2.out', delay: 0.2 });
     }
 
-    // Log data
-    console.log('Cotação solicitada:', state.data);
+    // Animar elementos em cascata
+    if (typeof gsap !== 'undefined') {
+      gsap.from('.success-icon-wrap', { scale: 0.5, opacity: 0, duration: 0.5, ease: 'back.out(1.7)' });
+      gsap.from('.success-header',   { y: 20, opacity: 0, duration: 0.5, ease: 'power2.out', delay: 0.3 });
+      gsap.from('.success-summary',  { y: 16, opacity: 0, duration: 0.45, ease: 'power2.out', delay: 0.5 });
+      gsap.from('.success-badges',   { y: 12, opacity: 0, duration: 0.4, ease: 'power2.out', delay: 0.7 });
+      gsap.from('.btn-new-quote',    { scale: 0.9, opacity: 0, duration: 0.5, ease: 'elastic.out(1,0.5)', delay: 0.9 });
+    }
+
+    // Enviar email com os dados do lead
+    sendLeadEmail();
+
+    console.log('Lead capturado:', state.data);
+  }
+
+  /* ── Envio de email via Web3Forms ─────────────────────────── */
+  function sendLeadEmail() {
+    const WEB3FORMS_KEY = 'COLE_SUA_CHAVE_AQUI'; // ← substitua pela sua chave
+
+    const serviceLabels = {
+      'portaria':       'Portaria & Recepção',
+      'controle-acesso':'Controle de Acesso',
+      'seguranca':      'Segurança Patrimonial',
+      'limpeza':        'Limpeza & Conservação',
+      'manutencao':     'Manutenção Predial',
+      'mao-de-obra':    'Mão de Obra Especializada'
+    };
+
+    const payload = {
+      access_key: WEB3FORMS_KEY,
+      subject:    `[Cota Facilities] Novo lead — ${serviceLabels[state.data.service] || state.data.service} em ${state.data.city}`,
+      from_name:  'Cota Facilities',
+      message: `
+🎯 NOVO LEAD — COTA FACILITIES
+================================
+
+👤 Nome:     ${state.data.name}
+📧 Email:    ${state.data.email}
+📱 Telefone: ${state.data.phone}
+
+🏢 Serviço:  ${serviceLabels[state.data.service] || state.data.service}
+📍 Cidade:   ${state.data.city}
+📋 Cotações: ${state.data.quotes} cotações solicitadas
+
+================================
+Recebido em: ${new Date().toLocaleString('pt-BR')}
+      `.trim()
+    };
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify(payload)
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.success) console.log('Email enviado com sucesso!');
+      else console.warn('Web3Forms erro:', data);
+    })
+    .catch(err => console.error('Falha ao enviar email:', err));
   }
 
   /* ── Fetch and Render Results ─────────────────────────────── */
