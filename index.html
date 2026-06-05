@@ -716,7 +716,8 @@
                   Atendendo cidades do estado de <strong>São Paulo</strong>
                 </div>
                 <div class="city-select-wrap">
-                  <select id="citySelect" class="city-select-input">
+                  <label for="citySelect" class="sr-only">Selecione sua cidade</label>
+                  <select id="citySelect" class="city-select-input" aria-label="Selecione sua cidade">
                     <option value="">Selecione sua cidade...</option>
                     <option value="Americana">Americana</option>
                     <option value="Araraquara">Araraquara</option>
@@ -1151,10 +1152,11 @@
         </div>
         <div class="providers-form-wrap">
           <div class="providers-form-card">
-            <h4>Cadastro de Prestador</h4>
+            <h3>Cadastro de Prestador</h3>
             <div class="providers-form" id="providerForm">
               <input type="text" id="providerName" placeholder="Nome da empresa" class="provider-input" required>
-              <select id="providerSegment" class="provider-input" required>
+              <label for="providerSegment" class="sr-only">Segmento de atuação</label>
+              <select id="providerSegment" class="provider-input" required aria-label="Segmento de atuação">
                 <option value="">Segmento de atuação</option>
                 <option value="Portaria &amp; Recepção">Portaria &amp; Recepção</option>
                 <option value="Controle de Acesso">Controle de Acesso</option>
@@ -1542,7 +1544,7 @@
         </div>
 
         <div class="footer-links-group">
-          <h5>Plataforma</h5>
+          <p class="footer-links-group-title">Plataforma</p>
           <a href="#como-funciona">Como Funciona</a>
           <a href="#servicos">Serviços</a>
           <a href="#cotacao">Solicitar Cotação</a>
@@ -1550,7 +1552,7 @@
         </div>
 
         <div class="footer-links-group">
-          <h5>Empresa</h5>
+          <p class="footer-links-group-title">Empresa</p>
           <a href="#">Sobre Nós</a>
           <a href="#">Blog</a>
           <a href="#">Contato</a>
@@ -1558,7 +1560,7 @@
         </div>
 
         <div class="footer-links-group">
-          <h5>Legal</h5>
+          <p class="footer-links-group-title">Legal</p>
           <a href="#">Termos de Uso</a>
           <a href="#">Política de Privacidade</a>
           <a href="#">LGPD</a>

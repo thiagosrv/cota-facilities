@@ -1745,9 +1745,14 @@
   gap: var(--space-3);
 }
 
-.footer-links-group h5 {
+/* h5 → p.footer-links-group-title (semântica correta, mesma visual) */
+.footer-links-group h5,
+.footer-links-group-title {
   font-size: 11px;
-  color: rgba(255,255,255,0.4);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.60); /* era 0.4 = contraste insuficiente */
   margin-bottom: var(--space-2);
 }
 
@@ -1763,7 +1768,7 @@
 
 .footer-bottom p {
   font-size: 13px;
-  color: rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.60); /* era 0.3 = 2.7:1 reprovado → 0.6 = 6.9:1 ✓ */
 }
 
 .footer-badges {
@@ -1773,7 +1778,7 @@
 
 .footer-badge {
   font-size: 12px;
-  color: rgba(255,255,255,0.35);
+  color: rgba(255,255,255,0.60); /* ajustado para contraste AA */
   font-weight: var(--font-heading);
 }
 
