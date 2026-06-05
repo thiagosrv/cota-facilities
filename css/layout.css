@@ -154,13 +154,30 @@
   margin-top: var(--space-5);
 }
 
-/* ── Form Section Layout ─────────────────────────────────── */
+/* ── Form Section Layout — faixa navy de destaque ─────── */
 .section-form {
   padding: var(--space-32) 0;
-  background: var(--bg-secondary);
+  background: var(--bg-dark);
   position: relative;
-  border-top: 1px solid var(--card-border);
+  border-top: none;
+  overflow: hidden;
 }
+
+/* Glow radial verde suave ao fundo */
+.section-form::after {
+  content: '';
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(22,163,74,0.10) 0%, transparent 65%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section-form .container { position: relative; z-index: 1; }
 
 .section-form::before { display: none; }
 

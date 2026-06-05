@@ -158,6 +158,22 @@
   font-weight: 700;
 }
 
+/* ── Form section header — fundo navy ──────────────────────── */
+.section-form .section-header h2   { color: var(--text-white); }
+.section-form .section-header p    { color: rgba(255,255,255,0.65); }
+.section-form .section-header strong { color: var(--accent-yellow); }
+.section-form .section-tag {
+  color: var(--bg-dark);
+  background: rgba(250,204,21,0.20);
+  border-color: rgba(250,204,21,0.55);
+}
+/* Card do form mantém branco para contraste máximo */
+.section-form .form-card {
+  background: var(--card-bg);
+  border-color: rgba(255,255,255,0.10);
+  box-shadow: 0 24px 80px rgba(0,0,0,0.35), 0 0 40px rgba(22,163,74,0.10);
+}
+
 /* ── Services (ICE background) ────────────────────────────── */
 .section-services .service-card {
   background: var(--card-bg);
@@ -756,20 +772,25 @@
   animation: scroll-wheel 2s ease-in-out infinite;
 }
 
-/* ── Step Cards ──────────────────────────────────────────── */
+/* ── Step Cards — light mode premium ────────────────────── */
 .step-card {
-  background: rgba(15,23,42,0.8);
-  border: 1px solid var(--color-border);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-top: 4px solid var(--cta-primary);
   border-radius: var(--radius-xl);
   padding: var(--space-10) var(--space-8);
   position: relative;
-  transition: border-color var(--duration-base), transform var(--duration-base) var(--ease-out);
+  overflow: hidden;
+  transition: border-color var(--duration-base), transform var(--duration-base) var(--ease-out), box-shadow var(--duration-base);
   text-align: center;
+  box-shadow: var(--shadow-card);
 }
 
 .step-card:hover {
-  border-color: rgba(123,47,190,0.4);
-  transform: translateY(-4px);
+  border-color: var(--cta-primary);
+  border-top-color: var(--cta-primary);
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(22,163,74,0.14), 0 4px 16px rgba(7,27,58,0.08);
 }
 
 .step-number-wrap {
@@ -790,13 +811,13 @@
 
 .step-ring-bg {
   fill: none;
-  stroke: rgba(123,47,190,0.15);
+  stroke: var(--card-border);
   stroke-width: 3;
 }
 
 .step-ring-fill {
   fill: none;
-  stroke: var(--color-purple);
+  stroke: var(--cta-primary);
   stroke-width: 3;
   stroke-linecap: round;
   stroke-dasharray: 214;
@@ -816,32 +837,37 @@
   justify-content: center;
   font-size: 18px;
   font-weight: 700;
-  color: var(--color-purple);
+  color: var(--text-title);
 }
 
 .step-icon {
-  width: 56px;
-  height: 56px;
-  background: rgba(123,47,190,0.1);
+  width: 64px;
+  height: 64px;
+  background: rgba(250,204,21,0.12);
   border-radius: var(--radius-lg);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-inline: auto;
-  margin-bottom: var(--space-4);
-  transition: background var(--duration-base);
+  margin-bottom: var(--space-5);
+  transition: background var(--duration-base), transform var(--duration-base) var(--ease-spring);
+  color: var(--bg-dark);
 }
 
 .step-card:hover .step-icon {
-  background: rgba(123,47,190,0.2);
+  background: rgba(22,163,74,0.12);
+  color: var(--cta-primary);
+  transform: scale(1.08) rotate(-4deg);
 }
 
 .step-card h3 {
   margin-bottom: var(--space-3);
+  color: var(--text-title);
 }
 
 .step-card p {
   font-size: 15px;
+  color: var(--text-muted);
 }
 
 .step-connector {
@@ -850,7 +876,7 @@
   right: -36px;
   width: 36px;
   height: 2px;
-  background: linear-gradient(90deg, var(--color-purple), transparent);
+  background: linear-gradient(90deg, var(--cta-primary), transparent);
   transform: translateY(-50%);
   pointer-events: none;
 }
@@ -2034,16 +2060,19 @@
 }
 
 .keyword-category {
-  background: var(--color-navy-mid);
-  border: 1px solid var(--color-border);
+  background: var(--card-bg);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-left: 4px solid var(--cta-primary);
   border-radius: var(--radius-xl);
   padding: var(--space-6) var(--space-6);
-  transition: border-color var(--duration-base), transform var(--duration-base) var(--ease-out);
+  transition: border-color var(--duration-base), transform var(--duration-base) var(--ease-out), box-shadow var(--duration-base);
 }
 
 .keyword-category:hover {
-  border-color: rgba(123,47,190,0.3);
-  transform: translateY(-4px);
+  border-color: rgba(255,255,255,0.20);
+  border-left-color: var(--accent-yellow);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.25);
 }
 
 .kw-icon {
@@ -2054,10 +2083,10 @@
 .keyword-category h3 {
   font-size: 16px;
   font-weight: 700;
-  color: var(--color-white);
+  color: var(--text-title);
   margin-bottom: var(--space-4);
   padding-bottom: var(--space-3);
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--card-border);
 }
 
 .keyword-category ul {
@@ -2068,7 +2097,7 @@
 
 .keyword-category li {
   font-size: 13px;
-  color: var(--color-muted);
+  color: var(--text-muted);
   padding-left: var(--space-4);
   position: relative;
   line-height: 1.5;
@@ -2079,12 +2108,12 @@
   content: '→';
   position: absolute;
   left: 0;
-  color: var(--color-lime);
+  color: var(--cta-primary);
   font-size: 11px;
 }
 
 .keyword-category:hover li {
-  color: rgba(255,255,255,0.7);
+  color: var(--text-main);
 }
 
 @media (max-width: 900px) {
