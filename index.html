@@ -236,6 +236,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 
   <!-- Google Fonts — assíncrono (não bloqueia renderização) -->
   <link rel="preload" as="style"
@@ -254,15 +256,22 @@
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/animations.css">
 
-  <!-- GSAP core apenas — ScrollTrigger removido (substituído por IntersectionObserver) -->
+  <!-- GSAP 3 + ScrollTrigger (defer = executa em ordem, antes de DOMContentLoaded) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+  <!-- Lenis — scroll suave (substitui scroll-behavior: smooth) -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js" defer></script>
 
   <!-- JS -->
   <script src="js/counters.js" defer></script>
   <script src="js/form.js?v=1.4" defer></script>
-  <script src="js/main.js?v=2.0" defer></script>
+  <script src="js/main.js?v=3.0" defer></script>
 </head>
 <body>
+
+  <!-- Barra de progresso de scroll (topo da viewport) -->
+  <div id="scrollProgress" aria-hidden="true"></div>
 
   <!-- ─────────────────────────────────────────
        NAVBAR

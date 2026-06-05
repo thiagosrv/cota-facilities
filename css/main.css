@@ -128,7 +128,8 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth removido — Lenis assume este papel.
+     Manter aqui causaria conflito com o smooth scroll do Lenis. */
   -webkit-text-size-adjust: 100%;
 }
 

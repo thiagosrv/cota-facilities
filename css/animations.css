@@ -80,7 +80,41 @@
   }
 }
 
-/* ── Reveal — IntersectionObserver adiciona .is-visible ─── */
+/* ── Scroll Progress Bar ─────────────────────────────────
+   GSAP anima scaleX de 0 → 1 via scrollTrigger scrub.
+   transform-origin: left garante que cresce da esquerda.
+──────────────────────────────────────────────────────── */
+#scrollProgress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--cta-primary) 0%, var(--accent-yellow) 100%);
+  transform-origin: left center;
+  transform: scaleX(0);
+  z-index: 10002;   /* acima de tudo (hamburger: 10001, overlay: 9999) */
+  pointer-events: none;
+  border-radius: 0 2px 2px 0;
+}
+
+/* ── Word Split — used by GSAP word-reveal ───────────────
+   .word-wrap: container com overflow:hidden (clipping mask)
+   .word: elemento animado com yPercent por GSAP
+──────────────────────────────────────────────────────── */
+.word-wrap {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;  /* alinha baseline corretamente */
+  line-height: inherit;
+}
+
+.word {
+  display: inline-block;
+  will-change: transform;
+}
+
+/* ── Reveal — fallback IO (quando GSAP/ST não carregam) ── */
 .reveal {
   opacity: 0;
   transform: translateY(28px);
