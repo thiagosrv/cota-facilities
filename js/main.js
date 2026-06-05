@@ -349,42 +349,38 @@
 
     let isOpen = false;
 
-    toggle.addEventListener('click', () => {
-      isOpen = !isOpen;
+    function openMenu() {
+      isOpen = true;
+      links.classList.add('open');
+      toggle.classList.add('menu-open');
+      document.body.style.overflow = 'hidden'; /* trava scroll */
+      gsap.from(links.querySelectorAll('.nav-link'), {
+        y: 24, opacity: 0, stagger: 0.08, duration: 0.4, ease: 'power2.out'
+      });
+      const spans = toggle.querySelectorAll('span');
+      gsap.to(spans[0], { rotation: 45, y: 7, duration: 0.3 });
+      gsap.to(spans[1], { opacity: 0, duration: 0.2 });
+      gsap.to(spans[2], { rotation: -45, y: -7, duration: 0.3 });
+    }
 
-      if (isOpen) {
-        links.classList.add('open');
-        gsap.from(links.querySelectorAll('.nav-link'), {
-          y: 20,
-          opacity: 0,
-          stagger: 0.08,
-          duration: 0.4,
-          ease: 'power2.out'
-        });
-        /* Animate hamburger to X */
-        const spans = toggle.querySelectorAll('span');
-        gsap.to(spans[0], { rotation: 45, y: 7, duration: 0.3 });
-        gsap.to(spans[1], { opacity: 0, duration: 0.2 });
-        gsap.to(spans[2], { rotation: -45, y: -7, duration: 0.3 });
-      } else {
-        links.classList.remove('open');
-        const spans = toggle.querySelectorAll('span');
-        gsap.to(spans[0], { rotation: 0, y: 0, duration: 0.3 });
-        gsap.to(spans[1], { opacity: 1, duration: 0.2, delay: 0.1 });
-        gsap.to(spans[2], { rotation: 0, y: 0, duration: 0.3 });
-      }
+    function closeMenu() {
+      isOpen = false;
+      links.classList.remove('open');
+      toggle.classList.remove('menu-open');
+      document.body.style.overflow = ''; /* libera scroll */
+      const spans = toggle.querySelectorAll('span');
+      gsap.to(spans[0], { rotation: 0, y: 0, duration: 0.3 });
+      gsap.to(spans[1], { opacity: 1, duration: 0.2, delay: 0.1 });
+      gsap.to(spans[2], { rotation: 0, y: 0, duration: 0.3 });
+    }
+
+    toggle.addEventListener('click', () => {
+      isOpen ? closeMenu() : openMenu();
     });
 
     /* Close on link click */
     links.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        isOpen = false;
-        links.classList.remove('open');
-        const spans = toggle.querySelectorAll('span');
-        gsap.to(spans[0], { rotation: 0, y: 0, duration: 0.3 });
-        gsap.to(spans[1], { opacity: 1, duration: 0.2, delay: 0.1 });
-        gsap.to(spans[2], { rotation: 0, y: 0, duration: 0.3 });
-      });
+      link.addEventListener('click', closeMenu);
     });
   }
 

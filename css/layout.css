@@ -386,12 +386,29 @@
     flex-direction: column;
     position: fixed;
     inset: 0;
-    background: rgba(15,23,42,0.97);
+    background: var(--bg-dark);
     backdrop-filter: blur(20px);
-    z-index: 999;
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 1000;
     justify-content: center;
     align-items: center;
     gap: var(--space-8);
-    font-size: 24px;
+    font-size: 22px;
+  }
+
+  /* Links dentro do menu mobile ficam brancos sobre fundo navy */
+  .navbar-links.open .nav-link {
+    color: var(--text-white);
+    font-size: 22px;
+    font-weight: 600;
+    padding: var(--space-3) var(--space-6);
+  }
+
+  .navbar-links.open .nav-link:hover {
+    color: var(--accent-yellow);
+  }
+
+  .navbar-links.open .nav-link::after {
+    background: var(--accent-yellow);
   }
 }
