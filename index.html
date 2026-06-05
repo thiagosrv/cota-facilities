@@ -278,11 +278,93 @@
         <a href="#prestadores" class="nav-link">Para Empresas</a>
       </div>
       <a href="#cotacao" class="btn-nav">Solicitar Cotações</a>
-      <button class="navbar-toggle" id="navToggle" aria-label="Menu">
-        <span></span><span></span><span></span>
+      <!-- Hamburger — z-index 10001 (acima do overlay #mobileMenu z-9999) -->
+      <button class="hamburger" id="navToggle"
+              aria-label="Abrir menu de navegação"
+              aria-expanded="false"
+              aria-controls="mobileMenu">
+        <span class="hb-bar"></span>
+        <span class="hb-bar"></span>
+        <span class="hb-bar"></span>
       </button>
     </div>
   </nav>
+
+  <!-- ─────────────────────────────────────────
+       MOBILE MENU OVERLAY
+       Irmão do <nav>, não filho — position:fixed
+       se ancora ao viewport sem interferência de
+       backdrop-filter ou transform do ancestral.
+  ───────────────────────────────────────── -->
+  <div id="mobileMenu" class="mobile-menu" role="dialog"
+       aria-modal="true" aria-label="Menu de navegação" aria-hidden="true">
+
+    <!-- Cabeçalho: logo + fechar -->
+    <div class="mm-head">
+      <a href="#" class="mm-logo" tabindex="-1">
+        <img src="cota.png" alt="Cota Facilities" height="34">
+      </a>
+      <button class="mm-close" id="menuClose" aria-label="Fechar menu">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+          <line x1="4" y1="4" x2="18" y2="18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+          <line x1="18" y1="4" x2="4"  y2="18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Divisor -->
+    <div class="mm-divider"></div>
+
+    <!-- Navegação principal -->
+    <nav class="mm-nav" aria-label="Menu principal mobile">
+      <a href="#como-funciona" class="mm-link">
+        <span class="mm-num">01</span>
+        <span class="mm-label">Como Funciona</span>
+        <svg class="mm-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <a href="#servicos" class="mm-link">
+        <span class="mm-num">02</span>
+        <span class="mm-label">Serviços</span>
+        <svg class="mm-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <a href="#prestadores" class="mm-link">
+        <span class="mm-num">03</span>
+        <span class="mm-label">Para Empresas</span>
+        <svg class="mm-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <a href="#cotacao" class="mm-link mm-link--cta">
+        <span class="mm-num">04</span>
+        <span class="mm-label">Solicitar Cotação</span>
+        <svg class="mm-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </nav>
+
+    <!-- Rodapé: CTA + badges de confiança -->
+    <div class="mm-foot">
+      <a href="#cotacao" class="mm-cta-btn">
+        Solicitar Cotações Gratuitas
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <path d="M3.5 9h11M9 4l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <div class="mm-trust">
+        <span class="mm-trust-item">✓ 100% Gratuito</span>
+        <span class="mm-trust-item">⚡ Resposta em 24h</span>
+        <span class="mm-trust-item">🔒 LGPD</span>
+      </div>
+    </div>
+
+    <!-- Glow decorativo de fundo -->
+    <div class="mm-glow" aria-hidden="true"></div>
+  </div>
 
   <!-- ─────────────────────────────────────────
        HERO

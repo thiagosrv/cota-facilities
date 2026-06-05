@@ -408,33 +408,270 @@
   color: var(--text-title);
 }
 
-/* Hamburger */
-.navbar-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  padding: 8px;
-  cursor: pointer;
+/* ── Hamburger Button ────────────────────────────────────
+   44×44px touch target (WCAG 2.5.5).
+   z-index 10001 garante que fica acima do overlay (9999).
+──────────────────────────────────────────────────────── */
+.hamburger {
+  display: none;           /* visível apenas no @media abaixo */
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
   margin-left: auto;
+  flex-shrink: 0;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
   position: relative;
-  z-index: 1001; /* acima do overlay navy */
+  z-index: 10001;           /* acima do #mobileMenu z-9999 */
+  transition: background var(--duration-fast);
+}
+
+.hamburger:hover {
+  background: rgba(7,27,58,0.06);
+}
+
+.hb-bar {
+  display: block;
+  position: absolute;
+  left: 50%;
+  width: 24px;
+  height: 2px;
+  background: var(--text-title);
+  border-radius: 2px;
+  transform-origin: center;
+  transition: transform 0.35s var(--ease-out),
+              opacity   0.25s ease,
+              width     0.25s ease;
+}
+
+/* Posicionamento das 3 barras */
+.hb-bar:nth-child(1) { transform: translateX(-50%) translateY(-7px); }
+.hb-bar:nth-child(2) { transform: translateX(-50%) translateY(0); }
+.hb-bar:nth-child(3) { transform: translateX(-50%) translateY(7px); }
+
+/* Estado "aberto" — forma X */
+.hamburger.is-open .hb-bar:nth-child(1) {
+  transform: translateX(-50%) translateY(0) rotate(45deg);
+  background: #FFFFFF;
+}
+.hamburger.is-open .hb-bar:nth-child(2) {
+  opacity: 0;
+  width: 0;
+}
+.hamburger.is-open .hb-bar:nth-child(3) {
+  transform: translateX(-50%) translateY(0) rotate(-45deg);
+  background: #FFFFFF;
+}
+
+/* ── Mobile Menu Overlay ─────────────────────────────────
+   Irmão do <nav> no DOM — position:fixed se ancora ao
+   viewport sem ser afetado por backdrop-filter do pai.
+──────────────────────────────────────────────────────── */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  background: #071B3A;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0 24px 40px;
+
+  /* Estado fechado */
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(100%);
+  transition:
+    transform 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity   0.32s ease,
+    visibility 0.42s;
+}
+
+.mobile-menu.is-open {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Glow decorativo roxo-violeta no canto inferior */
+.mm-glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  bottom: -150px;
+  right: -150px;
+  background: radial-gradient(circle, rgba(139,92,246,0.18) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Cabeçalho ───────────────────────────────────────── */
+.mm-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0 16px;
+  position: relative;
+  z-index: 1;
   flex-shrink: 0;
 }
 
-.navbar-toggle span {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background: var(--text-title);
-  border-radius: 1px;
-  transition: transform var(--duration-base) var(--ease-out),
-              opacity var(--duration-base),
-              background var(--duration-base);
+.mm-logo { display: flex; align-items: center; }
+
+.mm-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  color: rgba(255,255,255,0.70);
+  border-radius: var(--radius-sm);
+  transition: color var(--duration-fast), background var(--duration-fast);
 }
 
-/* Barras brancas quando menu aberto */
-.navbar-toggle.menu-open span {
-  background: var(--text-white);
+.mm-close:hover {
+  color: #FFFFFF;
+  background: rgba(255,255,255,0.08);
+}
+
+/* ── Divisor ─────────────────────────────────────────── */
+.mm-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.10);
+  margin: 0 0 8px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Navegação ───────────────────────────────────────── */
+.mm-nav {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  padding: 8px 0;
+}
+
+.mm-link {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  transition: color var(--duration-base), padding-left var(--duration-base) var(--ease-out);
+
+  /* Estado inicial para animação de entrada */
+  opacity: 0;
+  transform: translateX(32px);
+}
+
+/* Animado pelo JS (GSAP) — ver main.js */
+
+.mm-link:hover {
+  color: #FFFFFF;
+  padding-left: 6px;
+}
+
+.mm-link:hover .mm-arrow {
+  transform: translateX(4px);
+  color: #FACC15;
+}
+
+.mm-num {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.35);
+  min-width: 24px;
+  flex-shrink: 0;
+}
+
+.mm-label {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  flex: 1;
+  line-height: 1.1;
+}
+
+.mm-arrow {
+  color: rgba(255,255,255,0.30);
+  flex-shrink: 0;
+  transition: transform 0.25s var(--ease-out), color 0.25s;
+}
+
+/* Link de CTA (04 — Solicitar Cotação) */
+.mm-link--cta .mm-label {
+  color: #FACC15;
+}
+
+.mm-link--cta .mm-num {
+  color: rgba(250,204,21,0.50);
+}
+
+.mm-link--cta .mm-arrow {
+  color: #FACC15;
+}
+
+/* ── Rodapé ──────────────────────────────────────────── */
+.mm-foot {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 28px;
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+
+  /* Estado inicial para animação de entrada */
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.mm-cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 16px 24px;
+  background: var(--cta-primary);
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.005em;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: background var(--duration-fast), transform var(--duration-fast), box-shadow var(--duration-base);
+}
+
+.mm-cta-btn:hover {
+  background: var(--cta-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(22,163,74,0.35);
+}
+
+.mm-trust {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.mm-trust-item {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: rgba(255,255,255,0.45);
+  white-space: nowrap;
 }
 
 /* ── Buttons ─────────────────────────────────────────────── */
@@ -515,9 +752,11 @@
   box-shadow: 0 4px 14px rgba(22,163,74,0.25);
 }
 
-@media (max-width: 600px) {
-  .navbar-toggle { display: flex; }
-  .btn-nav { display: none; }
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+  .btn-nav   { display: none; }
+  /* Links do desktop ficam ocultos; mobile usa #mobileMenu */
+  .navbar-links { display: none; }
 }
 
 /* ── Hero Components ─────────────────────────────────────── */

@@ -231,47 +231,113 @@
 
   /* ── Mobile Menu ─────────────────────────────────────────── */
   function initMobileMenu() {
-    const toggle = document.getElementById('navToggle');
-    const links  = document.getElementById('navLinks');
-    if (!toggle || !links) return;
+    const toggle    = document.getElementById('navToggle');
+    const closeBtn  = document.getElementById('menuClose');
+    const menu      = document.getElementById('mobileMenu');
+    if (!toggle || !menu) return;
 
-    let isOpen = false;
+    const mmLinks = menu.querySelectorAll('.mm-link');
+    const mmFoot  = menu.querySelector('.mm-foot');
+    let isOpen    = false;
 
+    /* ── Abrir ──────────────────────────────────────────── */
     function openMenu() {
+      if (isOpen) return;
       isOpen = true;
-      links.classList.add('open');
-      toggle.classList.add('menu-open');
+
+      // Acessibilidade
+      toggle.setAttribute('aria-expanded', 'true');
+      menu.setAttribute('aria-hidden', 'false');
+      toggle.classList.add('is-open');
+
+      // Trava scroll do body
       document.body.style.overflow = 'hidden';
 
+      // Revela o painel (CSS transition)
+      menu.classList.add('is-open');
+
+      // GSAP: stagger dos links + rodapé
       if (typeof gsap !== 'undefined') {
-        const navLinks = links.querySelectorAll('.nav-link');
-        gsap.fromTo(navLinks,
-          { y: 20, opacity: 0 },
-          { y: 0, opacity: 1, stagger: 0.07, duration: 0.35, ease: 'power2.out' }
-        );
-        const spans = toggle.querySelectorAll('span');
-        gsap.to(spans[0], { rotation: 45,  y: 7,  duration: 0.28 });
-        gsap.to(spans[1], { opacity: 0,           duration: 0.18 });
-        gsap.to(spans[2], { rotation: -45, y: -7, duration: 0.28 });
+        // Garante estado inicial visível para re-abertura
+        gsap.set(mmLinks, { opacity: 0, x: 32 });
+        gsap.set(mmFoot,  { opacity: 0, y: 20 });
+
+        gsap.to(mmLinks, {
+          opacity: 1,
+          x: 0,
+          stagger: 0.07,
+          duration: 0.42,
+          ease: 'power3.out',
+          delay: 0.15         // aguarda o painel deslizar
+        });
+        gsap.to(mmFoot, {
+          opacity: 1,
+          y: 0,
+          duration: 0.40,
+          ease: 'power2.out',
+          delay: 0.15 + mmLinks.length * 0.07 + 0.08
+        });
+      } else {
+        // Fallback CSS puro
+        mmLinks.forEach((l, i) => {
+          l.style.transitionDelay = (0.15 + i * 0.07) + 's';
+          l.style.opacity = '1';
+          l.style.transform = 'translateX(0)';
+        });
+        if (mmFoot) {
+          mmFoot.style.transitionDelay = (0.15 + mmLinks.length * 0.07 + 0.08) + 's';
+          mmFoot.style.opacity = '1';
+          mmFoot.style.transform = 'translateY(0)';
+        }
       }
+
+      // Foco acessível no botão fechar
+      setTimeout(() => closeBtn?.focus(), 80);
     }
 
+    /* ── Fechar ─────────────────────────────────────────── */
     function closeMenu() {
+      if (!isOpen) return;
       isOpen = false;
-      links.classList.remove('open');
-      toggle.classList.remove('menu-open');
+
+      toggle.setAttribute('aria-expanded', 'false');
+      menu.setAttribute('aria-hidden', 'true');
+      toggle.classList.remove('is-open');
       document.body.style.overflow = '';
 
+      // Fade-out rápido antes do slide
       if (typeof gsap !== 'undefined') {
-        const spans = toggle.querySelectorAll('span');
-        gsap.to(spans[0], { rotation: 0, y: 0, duration: 0.28 });
-        gsap.to(spans[1], { opacity: 1, duration: 0.18, delay: 0.08 });
-        gsap.to(spans[2], { rotation: 0, y: 0, duration: 0.28 });
+        gsap.to([mmLinks, mmFoot], {
+          opacity: 0,
+          duration: 0.18,
+          ease: 'power1.in',
+          onComplete: () => menu.classList.remove('is-open')
+        });
+      } else {
+        menu.classList.remove('is-open');
       }
+
+      // Devolve foco ao toggle
+      toggle.focus();
     }
 
+    /* ── Eventos ─────────────────────────────────────────── */
     toggle.addEventListener('click', () => isOpen ? closeMenu() : openMenu());
-    links.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', closeMenu));
+    closeBtn?.addEventListener('click', closeMenu);
+
+    // Fechar ao clicar nos links
+    mmLinks.forEach(l => l.addEventListener('click', closeMenu));
+    menu.querySelector('.mm-cta-btn')?.addEventListener('click', closeMenu);
+
+    // ESC fecha o menu
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && isOpen) closeMenu();
+    });
+
+    // Fechar ao clicar fora do painel (no glow/borda esquerda)
+    menu.addEventListener('click', e => {
+      if (e.target === menu) closeMenu();
+    });
   }
 
   /* ── FAQ Accordion ───────────────────────────────────────── */

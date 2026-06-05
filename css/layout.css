@@ -419,47 +419,6 @@
     gap: var(--space-3);
   }
 
-  .navbar-links {
-    display: none;
-  }
-
-  /* Menu overlay: sem backdrop-filter para não criar containing block.
-     A navbar tem background sólido, então backdrop-filter não faz falta visualmente.
-     Sem ele, position:fixed no #navLinks se ancora ao viewport corretamente. */
-  .navbar-links.open {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #071B3A; /* hex direto, sem var() para evitar cascade issues */
-    z-index: 9998;
-    justify-content: center;
-    align-items: center;
-    gap: var(--space-8);
-  }
-
-  /* Links dentro do menu mobile — brancos sobre fundo navy */
-  .navbar-links.open .nav-link {
-    color: #FFFFFF;
-    font-size: 24px;
-    font-weight: 700;
-    padding: var(--space-3) var(--space-8);
-    letter-spacing: -0.01em;
-  }
-
-  .navbar-links.open .nav-link:hover {
-    color: #FACC15;
-  }
-
-  .navbar-links.open .nav-link::after {
-    background: #FACC15;
-  }
-
-  /* Botão toggle acima do overlay */
-  .navbar-toggle {
-    z-index: 9999;
-  }
+  /* Mobile: menu hamburger visível, links desktop ocultos.
+     O overlay fica no #mobileMenu (irmão do <nav>). */
 }
