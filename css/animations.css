@@ -150,8 +150,9 @@
   to   { transform: rotate(360deg); }
 }
 
-/* ── Hero grain overlay ──────────────────────────────────── */
+/* ── Hero grain overlay — desabilitado no light mode ─────── */
 .hero::after {
+  display: none;
   content: '';
   position: absolute;
   inset: 0;

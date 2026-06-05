@@ -47,7 +47,7 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  background: #080D1A; /* dark fallback when video not loaded */
+  background: var(--bg-secondary);
   padding-top: 100px;
   padding-bottom: var(--space-20);
 }
@@ -90,19 +90,12 @@
 /* ── How It Works Layout ─────────────────────────────────── */
 .section-how {
   padding: var(--space-32) 0;
-  background: var(--color-navy-mid);
+  background: var(--bg-main);
   position: relative;
+  border-top: 1px solid var(--card-border);
 }
 
-.section-how::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--color-purple), transparent);
-}
+.section-how::before { display: none; }
 
 .steps-grid {
   display: grid;
@@ -114,17 +107,12 @@
 /* ── Services Layout ─────────────────────────────────────── */
 .section-services {
   padding: var(--space-32) 0;
-  background: #FFFFFF;
+  background: var(--bg-secondary);
   position: relative;
+  border-top: 1px solid var(--card-border);
 }
 
-.section-services::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(123,47,190,0.2), transparent);
-}
+.section-services::before { display: none; }
 
 .services-grid {
   display: grid;
@@ -132,21 +120,15 @@
   gap: var(--space-5);
 }
 
-/* ── Stats Layout ────────────────────────────────────────── */
+/* ── Stats Layout — faixa navy de autoridade ─────────────── */
 .section-stats {
   padding: var(--space-24) 0;
-  background: var(--color-amber-bg);
+  background: var(--bg-dark);
   position: relative;
   overflow: hidden;
 }
 
-.section-stats::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 20% 50%, rgba(245,158,11,0.12) 0%, transparent 60%),
-              radial-gradient(circle at 80% 50%, rgba(132,204,22,0.1) 0%, transparent 60%);
-}
+.section-stats::before { display: none; }
 
 .stats-grid {
   display: grid;
@@ -175,19 +157,12 @@
 /* ── Form Section Layout ─────────────────────────────────── */
 .section-form {
   padding: var(--space-32) 0;
-  background: var(--color-navy);
+  background: var(--bg-secondary);
   position: relative;
+  border-top: 1px solid var(--card-border);
 }
 
-.section-form::before {
-  content: '';
-  position: absolute;
-  top: -1px;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--color-lime), transparent);
-}
+.section-form::before { display: none; }
 
 .form-wrapper {
   max-width: 720px;
@@ -197,17 +172,12 @@
 /* ── Trust Section Layout ────────────────────────────────── */
 .section-trust {
   padding: var(--space-32) 0;
-  background: #FFFFFF;
+  background: var(--bg-main);
   position: relative;
+  border-top: 1px solid var(--card-border);
 }
 
-.section-trust::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(123,47,190,0.2), transparent);
-}
+.section-trust::before { display: none; }
 
 .trust-grid {
   display: grid;
@@ -220,26 +190,21 @@
 /* ── Reviews Section Layout ──────────────────────────────── */
 .section-reviews {
   padding: var(--space-24) 0;
-  background: var(--color-amber-bg);
+  background: var(--bg-secondary);
   position: relative;
   overflow: hidden;
+  border-top: 1px solid var(--card-border);
 }
 
-.section-reviews::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--color-amber), var(--color-lime), transparent);
-}
+.section-reviews::before { display: none; }
 
 .reviews-rating-bar {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: var(--space-10);
-  background: var(--color-navy-mid);
-  border: 1px solid var(--color-border);
+  background: var(--bg-dark);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: var(--radius-xl);
   padding: var(--space-8) var(--space-12);
   max-width: 800px;
@@ -266,17 +231,12 @@
 /* ── Providers Section Layout ────────────────────────────── */
 .section-providers {
   padding: var(--space-32) 0;
-  background: linear-gradient(135deg, #1B3A8C 0%, #7B2FBE 100%);
+  background: var(--bg-dark);
   position: relative;
   overflow: hidden;
 }
 
-.section-providers::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.05) 0%, transparent 50%);
-}
+.section-providers::before { display: none; }
 
 .providers-inner {
   display: grid;
@@ -289,7 +249,7 @@
 
 /* ── Footer Layout ───────────────────────────────────────── */
 .footer {
-  background: #080E1A;
+  background: var(--bg-dark);
   padding: var(--space-20) 0 var(--space-8);
   position: relative;
 }

@@ -3,42 +3,79 @@
    Cota Facilities
    ============================================================ */
 
-/* ── Custom Properties ──────────────────────────────────── */
+/* ── Custom Properties — Design System B2B Conversão ──── */
 :root {
-  /* Brand Colors */
-  --color-navy:        #0F172A;
-  --color-navy-mid:    #1E293B;
-  --color-navy-light:  #334155;
+  /* ── Backgrounds */
+  --bg-main:         #FFFFFF;
+  --bg-secondary:    #F8FAFC;
+  --bg-dark:         #071B3A;
+  --bg-dark-soft:    #0B2545;
+
+  /* ── Textos */
+  --text-title:      #071B3A;
+  --text-main:       #1F2937;
+  --text-muted:      #64748B;
+  --text-white:      #FFFFFF;
+
+  /* ── CTAs */
+  --cta-primary:          #16A34A;
+  --cta-primary-hover:    #0F7A3B;
+  --cta-primary-text:     #FFFFFF;
+  --cta-secondary-bg:     #FFFFFF;
+  --cta-secondary-text:   #071B3A;
+  --cta-secondary-border: #071B3A;
+
+  /* ── Destaques */
+  --accent-yellow:      #FACC15;
+  --accent-yellow-dark: #EAB308;
+
+  /* ── Cards / Formulários */
+  --card-bg:      #FFFFFF;
+  --card-border:  #E2E8F0;
+  --input-bg:     #FFFFFF;
+  --input-border: #CBD5E1;
+  --input-focus:  #16A34A;
+
+  /* ── Estados */
+  --success-bg:   #DCFCE7;
+  --success-text: #166534;
+  --error:        #DC2626;
+
+  /* ── Aliases de compatibilidade (usados no código legado) */
+  --color-navy:        #071B3A;
+  --color-navy-mid:    #0B2545;
+  --color-navy-light:  #1E3A5F;
   --color-royal:       #1B3A8C;
-  --color-purple:      #7B2FBE;
-  --color-purple-dark: #5B1F8E;
-  --color-lime:        #84CC16;
-  --color-lime-dark:   #65A30D;
+  --color-purple:      #1B3A8C;
+  --color-purple-dark: #071B3A;
+  --color-lime:        #16A34A;
+  --color-lime-dark:   #0F7A3B;
   --color-white:       #FFFFFF;
-  --color-muted:       #94A3B8;
-  --color-border:      rgba(255, 255, 255, 0.08);
+  --color-muted:       #64748B;
+  --color-border:      #E2E8F0;
 
-  /* Gradients */
-  --gradient-hero:     linear-gradient(135deg, #0F172A 0%, #1B3A8C 55%, #7B2FBE 100%);
-  --gradient-purple:   linear-gradient(135deg, #5B1F8E 0%, #7B2FBE 100%);
-  --gradient-royal:    linear-gradient(135deg, #1B3A8C 0%, #2D5CC8 100%);
-  --gradient-cta:      linear-gradient(90deg, #7B2FBE, #1B3A8C);
-  --gradient-lime:     linear-gradient(135deg, #65A30D, #84CC16);
-  --gradient-stats:    radial-gradient(ellipse at center, #2D1B54 0%, #0F172A 70%);
+  /* ── Gradients */
+  --gradient-hero:   linear-gradient(135deg, #071B3A 0%, #0B2545 60%, #1B3A8C 100%);
+  --gradient-cta:    linear-gradient(90deg, #16A34A, #0F7A3B);
+  --gradient-lime:   linear-gradient(135deg, #16A34A, #0F7A3B);
+  --gradient-stats:  #071B3A;
+  --gradient-purple: linear-gradient(135deg, #071B3A, #0B2545);
+  --gradient-royal:  linear-gradient(135deg, #0B2545, #1B3A8C);
 
-  /* Amber / Yellow */
-  --color-amber-bg:  #FFF7E6;
-  --color-amber-mid: #FEF3C7;
-  --color-amber:     #F59E0B;
-  --color-amber-dark:#D97706;
+  /* ── Shadows — light-mode */
+  --shadow-sm:     0 1px 4px rgba(7,27,58,0.06);
+  --shadow-md:     0 4px 16px rgba(7,27,58,0.09);
+  --shadow-lg:     0 12px 40px rgba(7,27,58,0.12);
+  --shadow-card:   0 2px 12px rgba(7,27,58,0.08);
+  --shadow-purple: 0 4px 20px rgba(22,163,74,0.20);
+  --shadow-lime:   0 4px 16px rgba(22,163,74,0.25);
+  --shadow-glow:   0 0 40px rgba(22,163,74,0.12);
 
-  /* Shadows */
-  --shadow-sm:    0 2px 8px rgba(0,0,0,0.3);
-  --shadow-md:    0 8px 24px rgba(0,0,0,0.4);
-  --shadow-lg:    0 20px 60px rgba(0,0,0,0.5);
-  --shadow-purple: 0 8px 32px rgba(123,47,190,0.4);
-  --shadow-lime:   0 4px 20px rgba(132,204,22,0.35);
-  --shadow-glow:   0 0 60px rgba(123,47,190,0.2);
+  /* ── Amber (mantido para retrocompatibilidade) */
+  --color-amber-bg:   #FEFCE8;
+  --color-amber-mid:  #FEF9C3;
+  --color-amber:      #FACC15;
+  --color-amber-dark: #EAB308;
 
   /* Typography */
   --font-family:  'Outfit', system-ui, -apple-system, sans-serif;
@@ -98,8 +135,8 @@ body {
   font-size: 17px;
   font-weight: var(--font-body);
   line-height: 1.6;
-  color: var(--color-white);
-  background-color: var(--color-navy);
+  color: var(--text-main);
+  background-color: var(--bg-main);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
