@@ -147,10 +147,11 @@
    SECTION COLOR OVERRIDES — Sistema B2B Clean
    ============================================================ */
 
-/* ── Títulos e tags nas seções light ───────────────────────── */
+/* ── Títulos e tags: padrão seções claras ───────────────────── */
 .section-header h2     { color: var(--text-title); }
 .section-header p      { color: var(--text-muted); }
 
+/* Tag padrão (seções claras): amarelo translúcido + navy */
 .section-tag {
   color: var(--bg-dark);
   background: rgba(250,204,21,0.15);
@@ -158,17 +159,35 @@
   font-weight: 700;
 }
 
-/* ── Form section — fundo roxo #4C1D95 ─────────────────────── */
-.section-form .section-header h2   { color: #FFFFFF; }
-.section-form .section-header p    { color: rgba(255,255,255,0.75); }
-.section-form .section-header strong { color: #FACC15; }
+/* Tag para seções escuras (navy/roxo/verde):
+   rgba não funciona — mistura com o fundo e fica oliva/marrom.
+   Usar amarelo SÓLIDO com texto escuro para contraste garantido. */
+.section-tag--light,
+.section-tag--dark {
+  background: #FACC15 !important;
+  color: #1A1A1A !important;
+  border-color: #EAB308 !important;
+  font-weight: 700 !important;
+}
 
-/* Tag amarela sobre roxo — destaque âmbar */
+/* ══════════════════════════════════════════════════════════════
+   SEÇÃO COTAÇÃO — fundo roxo #4C1D95
+   ══════════════════════════════════════════════════════════════ */
+
+/* A seção usa .form-header (não .section-header) — seletor correto */
+.section-form .form-header h2 {
+  color: #FFFFFF;
+}
+.section-form .form-header p {
+  color: rgba(255,255,255,0.80);
+}
+.section-form .form-header strong { color: #FACC15; }
+
+/* Tag: amarelo sólido sobre roxo — contraste máximo */
 .section-form .section-tag {
-  color: #1C1C1C;
-  background: rgba(250,204,21,0.22);
-  border-color: rgba(250,204,21,0.60);
-  font-weight: 700;
+  background: #FACC15;
+  color: #1A1A1A;
+  border-color: #EAB308;
 }
 
 /* Card branco "flutuando" sobre o roxo — sombra profunda + halo violeta */
@@ -193,16 +212,17 @@
   color: rgba(255,255,255,0.50);
 }
 
-/* ── Trust section — fundo verde #15803D ────────────────────── */
-.section-trust .section-header h2  { color: #FFFFFF; }
-.section-trust .section-header p   { color: rgba(255,255,255,0.80); }
+/* ══════════════════════════════════════════════════════════════
+   SEÇÃO CONFIANÇA — fundo verde #15803D
+   ══════════════════════════════════════════════════════════════ */
+.section-trust .section-header h2 { color: #FFFFFF; }
+.section-trust .section-header p  { color: rgba(255,255,255,0.80); }
 
-/* Tag âmbar sobre verde */
+/* Tag: amarelo sólido sobre verde */
 .section-trust .section-tag {
-  color: #1C1C1C;
-  background: rgba(250,204,21,0.22);
-  border-color: rgba(250,204,21,0.60);
-  font-weight: 700;
+  background: #FACC15;
+  color: #1A1A1A;
+  border-color: #EAB308;
 }
 
 /* Cards brancos sobre verde — máximo contraste */
@@ -1667,16 +1687,32 @@
   line-height: 1.6;
 }
 
-/* ── Providers Section ───────────────────────────────────── */
+/* ── Providers Section (fundo navy) ─────────────────────────── */
 .providers-content h2 {
   font-size: clamp(28px, 3.5vw, 42px);
   margin-bottom: var(--space-4);
+  color: #FFFFFF;  /* era herdado → navy sobre navy = invisível */
 }
 
 .providers-content p {
   font-size: 17px;
-  color: rgba(255,255,255,0.75);
+  color: rgba(255,255,255,0.80);
   margin-bottom: var(--space-6);
+}
+
+/* Tag da seção providers: amarelo sólido sobre navy */
+.section-providers .section-tag,
+.section-providers .section-tag--light {
+  background: #FACC15 !important;
+  color: #1A1A1A !important;
+  border-color: #EAB308 !important;
+}
+
+/* Stats section: tag também amarela sólida */
+.section-stats .section-tag {
+  background: #FACC15;
+  color: #1A1A1A;
+  border-color: #EAB308;
 }
 
 .providers-benefits {
