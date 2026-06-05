@@ -99,10 +99,14 @@
     state.currentStep = next;
     updateProgress(next);
 
-    const formSection = document.getElementById('cotacao');
-    if (formSection) {
-      const navH = document.getElementById('navbar')?.offsetHeight || 80;
-      window.scrollTo({ top: formSection.getBoundingClientRect().top + window.scrollY - navH, behavior: 'smooth' });
+    // Rola até o topo do form-card (não da seção inteira)
+    // para que o formulário fique centralizado/visível sem scroll extra
+    const formCard = document.querySelector('.form-card');
+    const targetEl = formCard || document.getElementById('cotacao');
+    if (targetEl) {
+      const navH = (document.getElementById('navbar')?.offsetHeight || 70) + 8;
+      const targetTop = targetEl.getBoundingClientRect().top + window.scrollY - navH;
+      window.scrollTo({ top: targetTop, behavior: 'smooth' });
     }
   }
 

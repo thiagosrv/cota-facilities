@@ -314,11 +314,14 @@
   width: 100%;
 }
 
-/* Navbar light — sempre branca */
+/* Navbar light — sempre branca
+   IMPORTANTE: sem backdrop-filter — ele muda o containing block de
+   position:fixed nos filhos (como o menu mobile), quebrando o overlay */
 .navbar,
 .navbar.scrolled {
   background: rgba(255,255,255,0.97) !important;
   box-shadow: 0 1px 0 var(--card-border), 0 4px 16px rgba(7,27,58,0.06) !important;
+  /* backdrop-filter: removido intencionalmente */
 }
 
 .navbar.scrolled .nav-link {
@@ -1222,7 +1225,8 @@
 }
 
 .quote-option.recommended {
-  border-color: rgba(123,47,190,0.4);
+  border-color: var(--cta-primary);
+  border-width: 2px;
 }
 
 .option-badge {
@@ -1230,40 +1234,40 @@
   top: -12px;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--color-purple);
-  color: var(--color-white);
+  background: var(--bg-dark);
+  color: var(--text-white);
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 3px 10px;
+  padding: 4px 12px;
   border-radius: var(--radius-full);
   white-space: nowrap;
 }
 
 .option-num {
-  font-size: 42px;
-  font-weight: 700;
-  letter-spacing: -0.04em;
-  color: var(--color-white);
+  font-size: 52px;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: var(--text-title);   /* navy — visível no fundo claro */
   line-height: 1;
 }
 
 .option-num sup {
-  font-size: 24px;
+  font-size: 26px;
   vertical-align: super;
 }
 
 .quote-option.selected .option-num {
-  color: var(--color-lime);
+  color: var(--cta-primary);  /* verde quando selecionado */
 }
 
 .option-label {
-  font-size: 13px;
-  font-weight: var(--font-heading);
-  color: var(--color-muted);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.10em;
 }
 
 .option-desc {
