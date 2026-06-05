@@ -1,0 +1,50 @@
+name: 📄 Publicar 10 Páginas SEO por Dia
+
+on:
+  schedule:
+    - cron: '0 12 * * *'   # Todo dia às 09h Brasília (12h UTC)
+  workflow_dispatch:         # Permite rodar manualmente pelo GitHub
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Verificar fila
+        id: check
+        run: |
+          NEXT=$(python -c "import json; q=json.load(open('seo-queue.json')); print(q['next_index'])")
+          TOTAL=$(python -c "import json; q=json.load(open('seo-queue.json')); print(q['total'])")
+          echo "next=$NEXT" >> $GITHUB_OUTPUT
+          echo "total=$TOTAL" >> $GITHUB_OUTPUT
+          echo "Fila: $NEXT/$TOTAL páginas publicadas"
+
+      - name: Publicar 10 páginas
+        if: steps.check.outputs.next != steps.check.outputs.total
+        run: python publish_pages.py --count 10
+
+      - name: Commit e push
+        if: steps.check.outputs.next != steps.check.outputs.total
+        run: |
+          git config user.name  "Cota Facilities SEO Bot"
+          git config user.email "bot@cotafacilities.com.br"
+          git add .
+          git diff --staged --quiet || git commit -m "seo: publica 10 páginas como-contratar [bot]"
+          git push
+
+      - name: Fila concluída
+        if: steps.check.outputs.next == steps.check.outputs.total
+        run: echo "Todas as 1.020 páginas já foram publicadas!"
