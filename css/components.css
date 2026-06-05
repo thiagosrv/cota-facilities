@@ -158,20 +158,76 @@
   font-weight: 700;
 }
 
-/* ── Form section header — fundo navy ──────────────────────── */
-.section-form .section-header h2   { color: var(--text-white); }
-.section-form .section-header p    { color: rgba(255,255,255,0.65); }
-.section-form .section-header strong { color: var(--accent-yellow); }
+/* ── Form section — fundo roxo #4C1D95 ─────────────────────── */
+.section-form .section-header h2   { color: #FFFFFF; }
+.section-form .section-header p    { color: rgba(255,255,255,0.75); }
+.section-form .section-header strong { color: #FACC15; }
+
+/* Tag amarela sobre roxo — destaque âmbar */
 .section-form .section-tag {
-  color: var(--bg-dark);
-  background: rgba(250,204,21,0.20);
-  border-color: rgba(250,204,21,0.55);
+  color: #1C1C1C;
+  background: rgba(250,204,21,0.22);
+  border-color: rgba(250,204,21,0.60);
+  font-weight: 700;
 }
-/* Card do form mantém branco para contraste máximo */
+
+/* Card branco "flutuando" sobre o roxo — sombra profunda + halo violeta */
 .section-form .form-card {
-  background: var(--card-bg);
-  border-color: rgba(255,255,255,0.10);
-  box-shadow: 0 24px 80px rgba(0,0,0,0.35), 0 0 40px rgba(22,163,74,0.10);
+  background: #FFFFFF;
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow:
+    0 32px 80px rgba(0,0,0,0.40),
+    0 0 0 1px rgba(139,92,246,0.15),
+    0 0 60px rgba(139,92,246,0.18);
+}
+
+/* Progress bar do form: roxo claro sobre roxo escuro */
+.section-form .form-progress-wrap {
+  background: rgba(139,92,246,0.30);
+}
+
+/* Dots inativos no fundo roxo */
+.section-form .dot-icon {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.50);
+}
+
+/* ── Trust section — fundo verde #15803D ────────────────────── */
+.section-trust .section-header h2  { color: #FFFFFF; }
+.section-trust .section-header p   { color: rgba(255,255,255,0.80); }
+
+/* Tag âmbar sobre verde */
+.section-trust .section-tag {
+  color: #1C1C1C;
+  background: rgba(250,204,21,0.22);
+  border-color: rgba(250,204,21,0.60);
+  font-weight: 700;
+}
+
+/* Cards brancos sobre verde — máximo contraste */
+.section-trust .trust-card {
+  background: #FFFFFF;
+  border: none;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.14), 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.section-trust .trust-card:hover {
+  border: none;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.22), 0 4px 12px rgba(0,0,0,0.10);
+  transform: translateY(-6px);
+}
+
+/* Títulos e textos dos cards: navy/muted normais (sobre fundo branco) */
+.section-trust .trust-card h3 { color: var(--text-title); }
+.section-trust .trust-card p  { color: var(--text-muted); }
+
+/* Ícone: fundo amarelo para contraste com card branco */
+.section-trust .trust-icon-wrap {
+  background: rgba(250,204,21,0.15);
+}
+.section-trust .trust-card:hover .trust-icon-wrap {
+  background: rgba(250,204,21,0.28);
 }
 
 /* ── Services (ICE background) ────────────────────────────── */

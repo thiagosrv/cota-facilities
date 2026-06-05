@@ -154,22 +154,25 @@
   margin-top: var(--space-5);
 }
 
-/* ── Form Section Layout — faixa navy de destaque ─────── */
+/* ── Form Section Layout — faixa roxo de conversão ─────── */
 .section-form {
   padding: var(--space-32) 0;
-  background: var(--bg-dark);
+  background: #4C1D95;  /* roxo premium — contraste 16:1 com texto branco */
   position: relative;
   border-top: none;
   overflow: hidden;
 }
 
-/* Glow radial verde suave ao fundo */
+/* Glow radial violeta suave + grain texture opcional */
 .section-form::after {
   content: '';
   position: absolute;
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(circle, rgba(22,163,74,0.10) 0%, transparent 65%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(ellipse at 50% 50%,
+    rgba(139,92,246,0.25) 0%,
+    rgba(109,40,217,0.12) 40%,
+    transparent 70%);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -177,24 +180,63 @@
   z-index: 0;
 }
 
-.section-form .container { position: relative; z-index: 1; }
+/* Luz de canto superior direito */
+.section-form::before {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(250,204,21,0.07) 0%, transparent 65%);
+  top: -100px;
+  right: -80px;
+  pointer-events: none;
+  z-index: 0;
+}
 
-.section-form::before { display: none; }
+.section-form .container { position: relative; z-index: 1; }
 
 .form-wrapper {
   max-width: 720px;
   margin-inline: auto;
 }
 
-/* ── Trust Section Layout ────────────────────────────────── */
+/* ── Trust Section Layout — faixa verde confiança ────────── */
 .section-trust {
   padding: var(--space-32) 0;
-  background: var(--bg-main);
+  background: #15803D;  /* verde escuro — confiança, segurança */
   position: relative;
-  border-top: 1px solid var(--card-border);
+  border-top: none;
+  overflow: hidden;
 }
 
-.section-trust::before { display: none; }
+/* Glow radial esmeralda suave */
+.section-trust::after {
+  content: '';
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(255,255,255,0.07) 0%, transparent 60%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Detalhe de canto — luz âmbar sutil */
+.section-trust::before {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(250,204,21,0.10) 0%, transparent 65%);
+  bottom: -80px;
+  right: -60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section-trust .container { position: relative; z-index: 1; }
 
 .trust-grid {
   display: grid;
