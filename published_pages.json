@@ -244,6 +244,7 @@
     "sumare/cotacao-de-portaria",
     "sumare/empresas-de-portaria",
     "sumare/orcamento-de-portaria",
+    "sumare/portaria-terceirizada",
     "sumare/servico-de-portaria"
   ]
 }
