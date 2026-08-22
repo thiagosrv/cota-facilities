@@ -248,6 +248,7 @@
     "sumare/orcamento-de-controlador-de-acesso",
     "sumare/orcamento-de-portaria",
     "sumare/portaria-terceirizada",
+    "sumare/servico-de-controlador-de-acesso",
     "sumare/servico-de-portaria"
   ]
 }
